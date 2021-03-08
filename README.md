@@ -9,8 +9,10 @@ http://status.transactiongateway.com/
 
 ## Known Providers
 * [Bottom Line Payments](https://secure.bottomlinegateway.com/merchants/resources/integration/integration_portal.php)
-* [CanyonPay](https://www.canyonpay.com/developer)
+* [CanyonPay](https://www.canyonpay.com/developer) (not fully updated for live environment)
+* [CyoGate](https://cyogate.com/payment_gateway_developers_api.html)
 * [Electronic Processing of North America (EPNA)](https://epna.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 * [Network Merchants (NMI)](https://secure.networkmerchants.com/gw/merchants/resources/integration/integration_portal.php)
+* [PayScout](https://www.payscout.com/themes/site_themes/payscout/api/Direct-Post-API.pdf)
 
 If you find another gateway that uses this system, please file an issue to get this list updated.
