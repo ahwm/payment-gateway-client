@@ -1,7 +1,37 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFrameworks>netcoreapp3.1;net5.0;netcoreapp2.1;net45</TargetFrameworks>
+    <PackageId>PaymentGatewayClient</PackageId>
+    <Authors>Adam Humpherys</Authors>
+    <Company />
+    <Product>Payment Gateway Client</Product>
+    <Copyright>(c) 2021 Adam Humpherys</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/ahwm/payment-gateway-client</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ahwm/payment-gateway-client</RepositoryUrl>
+    <Version>0.0.1-alpha.1</Version>
+    <Description>Client for interacting with Transaction Gateway endpoints for multiple providers such NMI and Bottom Line Payments</Description>
+    <PackageTags>nmi bottomline payment gateway processor api mastercard amex visa canyonpay cyogate epna</PackageTags>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>
+      $(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb
+    </AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <DocumentationFile>PaymentGateway.xml</DocumentationFile>
+  </PropertyGroup>
+  
 </Project>
