@@ -8,6 +8,7 @@ https://www.integratepayments.com/payment-gateway/integrate-payments-query-api
 http://status.transactiongateway.com/
 
 ## Known Providers
+* [Aliant Payments](https://aliantpayments.com/api-documentation/)
 * [Bottom Line Payments](https://secure.bottomlinegateway.com/merchants/resources/integration/integration_portal.php)
 * [CanyonPay](https://www.canyonpay.com/developer) (not fully updated for live environment)
 * [CyoGate](https://cyogate.com/payment_gateway_developers_api.html)
