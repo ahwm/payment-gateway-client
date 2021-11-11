@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net5.0;netcoreapp2.1;net45</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net5.0;net6.0;net45</TargetFrameworks>
     <PackageId>PaymentGatewayClient</PackageId>
     <Authors>Adam Humpherys</Authors>
     <Company />
@@ -10,7 +10,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/ahwm/payment-gateway-client</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ahwm/payment-gateway-client</RepositoryUrl>
-    <Version>0.0.1-alpha.1</Version>
+    <Version>0.0.1-alpha.2</Version>
     <Description>Client for interacting with Transaction Gateway endpoints for multiple providers such NMI and Bottom Line Payments</Description>
     <PackageTags>nmi bottomline payment gateway processor api mastercard amex visa canyonpay cyogate epna</PackageTags>
   </PropertyGroup>
