@@ -14,7 +14,7 @@ Original documentation: <https://integratepayments.transactiongateway.com/mercha
 * [Advanced Merchant Group](https://secure.advancedmerchantgroupgateway.com/merchants/resources/integration/integration_portal.php)
 * [Aliant Payments](https://aliantpayments.com/api-documentation/)
 * [Bottom Line Payments](https://secure.bottomlinegateway.com/merchants/resources/integration/integration_portal.php)
-* [CanyonPay](https://www.canyonpay.com/developer) (not fully updated for live environment)
+* [CanyonPay](https://www.canyonpay.com/developer) (not fully updated for live environment, not implemented)
 * [CyoGate](https://cyogate.com/payment_gateway_developers_api.html)
 * [Durango Merchant Services](https://secure.durango-direct.com/merchants/resources/integration/integration_portal.php#methodology)
 * [Easy Pay Direct](https://secure.easypaydirectgateway.com/gw/merchants/resources/integration/integration_portal.php)
