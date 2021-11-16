@@ -27,5 +27,13 @@ namespace PaymentGateway
         /// <param name="securityKey"></param>
         public GatewayClient(string securityKey) : this(securityKey, GatewayProvider.NetworkMerchants)
         { }
+
+        /// <summary>
+        /// Initialize for use with any supported provider
+        /// </summary>
+        /// <param name="securityKey"></param>
+        /// <param name="postUrl"></param>
+        public GatewayClient(string securityKey, string postUrl) : this(securityKey, new GatewayProvider(postUrl))
+        { }
     }
 }
