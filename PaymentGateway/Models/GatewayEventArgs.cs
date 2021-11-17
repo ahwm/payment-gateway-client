@@ -21,5 +21,15 @@ namespace PaymentGateway.Models
                     _results.Add(k, _values[k]);
             }
         }
+
+        public GatewayEventArgs(Dictionary<string, string> _values)
+        {
+            _results = new Dictionary<string, string>();
+            foreach (var k in _values.Keys)
+            {
+                if (!Log.NoInclude.Contains(k))
+                    _results.Add(k, _values[k]);
+            }
+        }
     }
 }

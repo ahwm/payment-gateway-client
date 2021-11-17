@@ -57,6 +57,8 @@ namespace PaymentGateway
             foreach (var kv in attributes)
                 Values.Add(kv.Key, kv.Value);
 
+            RequestStarted?.Invoke(this, new GatewayEventArgs(Values));
+
             Dictionary<string, string> resp = new Dictionary<string, string>();
             using (HttpClient client = new HttpClient())
             {
@@ -73,6 +75,8 @@ namespace PaymentGateway
                     }
                 }
             }
+
+            RequestCompleted?.Invoke(this, new GatewayEventArgs(Values));
 
             return resp;
         }

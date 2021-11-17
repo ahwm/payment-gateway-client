@@ -19,7 +19,7 @@ namespace PaymentGateway.Helpers
                     if (property.GetCustomAttribute(typeof(ParameterNameAttribute)) is ParameterNameAttribute attribute)
                         l.Add(new KeyValuePair<string, string>(attribute.ParameterName, property.GetValue(model).ToString()));
                     else
-                        l.Add(new KeyValuePair<string, string>(property.Name, property.GetValue(model).ToString()));
+                        l.Add(new KeyValuePair<string, string>(property.Name.ToLower(), property.GetValue(model).ToString()));
                 }
             }
 
