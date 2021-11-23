@@ -21,6 +21,7 @@ Original documentation: <https://integratepayments.transactiongateway.com/mercha
 * [Electronic Processing of North America (EPNA)](https://epna.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 * [Merchant Guy](https://vizypay.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 * [Merchant One](https://secure.merchantonegateway.com/merchants/resources/integration/integration_portal.php)
+* [MSG Payment Systems](https://msg.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 * [National Processing](https://secure.nationalprocessinggateway.com/merchants/resources/integration/integration_portal.php)
 * [Network Merchants (NMI)](https://secure.networkmerchants.com/gw/merchants/resources/integration/integration_portal.php)
 * [Vericheck](https://vericheck.transactiongateway.com/merchants/resources/integration/integration_portal.php)
