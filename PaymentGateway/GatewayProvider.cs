@@ -20,6 +20,7 @@ namespace PaymentGateway
         public static GatewayProvider MerchantOne { get; } = new GatewayProvider("https://secure.merchantonegateway.com/api");
         public static GatewayProvider NationalProcessing { get; } = new GatewayProvider("https://secure.nationalprocessinggateway.com/api");
         public static GatewayProvider NetworkMerchants { get; } = new GatewayProvider("https://secure.networkmerchants.com/api");
+        public static GatewayProvider Vericheck { get; } = new GatewayProvider("https://vericheck.transactiongateway.com/api");
         public static GatewayProvider VizyPay { get; } = new GatewayProvider("https://vizypay.transactiongateway.com/api");
 
         public GatewayProvider(string postUrl)
