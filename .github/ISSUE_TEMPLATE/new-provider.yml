@@ -31,3 +31,5 @@ body:
       label: API Hostname
       description: Hostname where the API resides (find this in the provider's documentation)
       placeholder: ex. https://secure.networkmerchants.com
+    validations:
+      required: true
