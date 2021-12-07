@@ -1,0 +1,33 @@
+name: New Provider
+description: Request a new provider added
+title: "[PROVIDER]: "
+labels: ["New Provider"]
+assignees:
+  - ahwm
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for submitting a new provider!
+  - type: input
+    id: providerName
+    attributes:
+      label: Provider Name
+      description: Enter the provider's name
+      placeholder: ex. Network Merchants
+    validations:
+      required: true
+  - type: input
+    id: documentationUrl
+    attributes:
+      label: Documentation URL
+      description: URL where documentation resides
+      placeholder: ex. https://secure.networkmerchants.com/merchants/resources/integration/integration_portal.php
+    validations:
+      required: true
+  - type: input
+    id: apiHostname
+    attributes:
+      label: API Hostname
+      description: Hostname where the API resides (find this in the provider's documentation)
+      placeholder: ex. https://secure.networkmerchants.com
