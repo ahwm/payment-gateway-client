@@ -35,11 +35,11 @@ namespace PaymentGateway
         /// Initialize for use with default provider (NMI)
         /// </summary>
         /// <param name="securityKey"></param>
-        public GatewayClient(string securityKey) : this(securityKey, GatewayProvider.NetworkMerchants)
+        public GatewayClient(string securityKey) : this(securityKey, GatewayProvider.NMI)
         { }
 
         /// <summary>
-        /// Initialize for use with any supported provider
+        /// Initialize for use with any supported provider. Please file an issue at <a href="https://github.com/ahwm/payment-gateway-client">https://github.com/ahwm/payment-gateway-client</a> if using a provider not included
         /// </summary>
         /// <param name="securityKey"></param>
         /// <param name="postUrl"></param>

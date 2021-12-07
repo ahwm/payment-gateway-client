@@ -10,23 +10,31 @@ Original documentation: <https://integratepayments.transactiongateway.com/mercha
 
 ## Known Providers
 
-* [0 Merchant](https://0merchant.transactiongateway.com/gw/merchants/resources/integration/integration_portal.php)
+* [0 Merchant](https://0merchant.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 * [Advanced Merchant Group](https://secure.advancedmerchantgroupgateway.com/merchants/resources/integration/integration_portal.php)
-* [Aliant Payments](https://aliantpayments.com/api-documentation/)
+* [Aliant Payments](https://secure.apsmerchantgateway.com/merchants/resources/integration/integration_portal.php)
 * [Bottom Line Payments](https://secure.bottomlinegateway.com/merchants/resources/integration/integration_portal.php)
-* [CanyonPay](https://www.canyonpay.com/developer) (not fully updated for live environment, not implemented)
-* [CyoGate](https://cyogate.com/payment_gateway_developers_api.html)
-* [Durango Merchant Services](https://secure.durango-direct.com/merchants/resources/integration/integration_portal.php#methodology)
+* [CanyonPay](https://canyonpay.transactiongateway.com/merchants/resources/integration/integration_portal.php)
+* [CyoGate](https://secure.cyogate.net/merchants/resources/integration/integration_portal.php)
+* [Durango Merchant Services](https://secure.durango-direct.com/merchants/resources/integration/integration_portal.php)
 * [Easy Pay Direct](https://secure.easypaydirectgateway.com/gw/merchants/resources/integration/integration_portal.php)
 * [Electronic Processing of North America (EPNA)](https://epna.transactiongateway.com/merchants/resources/integration/integration_portal.php)
+* [Inspire Commerce (.pay / dot pay)](https://secure.inspiregateway.net/merchants/resources/integration/integration_portal.php)
 * [Merchant Guy](https://vizypay.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 * [Merchant One](https://secure.merchantonegateway.com/merchants/resources/integration/integration_portal.php)
 * [MSG Payment Systems](https://msgpay.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 * [National Processing](https://secure.nationalprocessinggateway.com/merchants/resources/integration/integration_portal.php)
-* [Network Merchants (NMI)](https://secure.networkmerchants.com/gw/merchants/resources/integration/integration_portal.php)
+* [Network Merchants (NMI)](https://secure.networkmerchants.com/merchants/resources/integration/integration_portal.php)
+* [PayKings](https://paykings.transactiongateway.com/merchants/resources/integration/integration_portal.php)
+* [Payscape](https://secure.payscapegateway.com/merchants/resources/integration/integration_portal.php)
+* [PlanetAuthorize](https://secure.planetauthorizegateway.com/merchants/resources/integration/integration_portal.php)
+* [RedFynn Technologies](https://secure.redfynngateway.com/merchants/resources/integration/integration_portal.php)
+* [SecureGlobalPay](https://secureglobalpay.transactiongateway.com/merchants/resources/integration/integration_portal.php)
+* [SkyBank Financial](https://secure.skybankgateway.com/merchants/resources/integration/integration_portal.php)
+* [TranzCrypt](https://secure.tranzcrypt.com/merchants/resources/integration/integration_portal.php)
 * [Vericheck](https://vericheck.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 * [VizyPay](https://vizypay.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 
-*Note: This is not an indication of endorsement and there is no guarantee of compatibility*
+***Note:*** *This is not an indication of endorsement and there is no guarantee of compatibility. These providers have not been tested.*
 
 If you find another gateway that uses this system, please file an issue to get this list updated.
