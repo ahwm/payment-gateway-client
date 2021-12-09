@@ -2,7 +2,7 @@ version: 0.0.1.{build}
 image: Visual Studio 2022
 configuration: Debug
 before_build:
-  - cmd: >-
+- cmd: >-
     dotnet restore
 build:
   verbosity: minimal
