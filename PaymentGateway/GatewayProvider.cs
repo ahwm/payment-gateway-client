@@ -4,9 +4,12 @@ using System.Text;
 
 namespace PaymentGateway
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class GatewayProvider
     {
-        public string PostUrl { get; }
+        internal string PostUrl { get; }
 
         /// <summary>
         /// 0 Merchant. See <a href="https://0merchant.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://0merchant.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>

@@ -5,6 +5,9 @@ using System.Text;
 
 namespace PaymentGateway.Models
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Sale
     {
         [ParameterName("type")]
@@ -22,12 +25,21 @@ namespace PaymentGateway.Models
         [ParameterName("googlepay_payment_data")]
         public string GooglePayPaymentData { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [ParameterName("ccnumber")]
         public string CardNumber { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [ParameterName("ccexp")]
         public string CardExpiration { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public string CVV { get; set; }
 
         /// <summary>
@@ -101,24 +113,36 @@ namespace PaymentGateway.Models
         public string AuthorizationCode { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class Authorize : Sale
     {
         [ParameterName("type")]
         new internal static string Type => "auth";
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class Credit : Sale
     {
         [ParameterName("type")]
         new internal static string Type => "credit";
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class Validate : Sale
     {
         [ParameterName("type")]
         new internal static string Type => "validate";
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class Offline : Sale
     {
         [ParameterName("type")]

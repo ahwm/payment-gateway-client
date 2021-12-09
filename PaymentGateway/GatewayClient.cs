@@ -10,11 +10,30 @@ using System.Xml.Linq;
 
 namespace PaymentGateway
 {
+    /// <summary>
+    /// Primary client for interacting with the gateway
+    /// </summary>
     public partial class GatewayClient
     {
+        /// <summary>
+        /// Event when a request is initiated
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public delegate void RequestStartedEventHandler(object sender, GatewayEventArgs e);
+        /// <summary>
+        /// Invoked when request is initiated
+        /// </summary>
         public event RequestStartedEventHandler RequestStarted;
+        /// <summary>
+        /// Event when a request is completed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public delegate void RequestCompletedEventHandler(object sender, GatewayEventArgs e);
+        /// <summary>
+        /// Invoked when request is competed
+        /// </summary>
         public event RequestCompletedEventHandler RequestCompleted;
 
         private GatewayProvider Provider { get; }
@@ -50,8 +69,10 @@ namespace PaymentGateway
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-            Dictionary<string, string> Values = new Dictionary<string, string>();
-            Values.Add("security_key", SecurityKey);
+            Dictionary<string, string> Values = new Dictionary<string, string>
+            {
+                { "security_key", SecurityKey }
+            };
 
             var attributes = AttributeHelper.GetAttributes(model);
             foreach (var kv in attributes)

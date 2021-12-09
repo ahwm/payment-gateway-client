@@ -7,11 +7,21 @@ using System.Text;
 
 namespace PaymentGateway.Models
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class GatewayEventArgs : EventArgs
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public ReadOnlyDictionary<string, string> Results { get { return new ReadOnlyDictionary<string, string>(_results); } }
         private Dictionary<string, string> _results;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_values"></param>
         public GatewayEventArgs(NameValueCollection _values)
         {
             _results = new Dictionary<string, string>();
@@ -22,6 +32,10 @@ namespace PaymentGateway.Models
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_values"></param>
         public GatewayEventArgs(Dictionary<string, string> _values)
         {
             _results = new Dictionary<string, string>();

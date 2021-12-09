@@ -35,6 +35,6 @@ Original documentation: <https://integratepayments.transactiongateway.com/mercha
 * [Vericheck](https://vericheck.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 * [VizyPay](https://vizypay.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 
-***Note:*** *This is not an indication of endorsement and there is no guarantee of compatibility. These providers have not been tested.*
+***Note:*** *This is not an indication of endorsement and there is no guarantee of compatibility. With the exception of NMI, these providers have not been tested.*
 
 If you find another gateway that uses this system, please file an issue to get this list updated.

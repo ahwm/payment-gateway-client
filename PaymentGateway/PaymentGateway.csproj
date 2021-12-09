@@ -13,8 +13,11 @@
 		<Version>0.0.1-alpha.4</Version>
 		<PackageReleaseNotes>Added new providers</PackageReleaseNotes>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<Description>Client for interacting with Transaction Gateway endpoints for multiple providers such NMI and Bottom Line Payments</Description>
+		<Description>Client for interacting with Transaction Gateway endpoints for multiple providers such as Network Merchants (NMI)</Description>
 		<PackageTags>nmi bottomline payment gateway processor api mastercard amex visa canyonpay cyogate epna 0merchant easypaydirect vizypay durango</PackageTags>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<DocumentationFile>PaymentGateway.xml</DocumentationFile>
+		<DebugType>embedded</DebugType>
 	</PropertyGroup>
 	
 	<ItemGroup>
@@ -44,7 +47,10 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)'=='Release'">
-		<DocumentationFile>PaymentGateway.xml</DocumentationFile>
+	</PropertyGroup>
+	
+	<PropertyGroup Condition="'$(APPVEYOR)'=='True'">
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
 	</PropertyGroup>
 
 </Project>
