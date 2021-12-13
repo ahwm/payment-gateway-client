@@ -76,5 +76,19 @@ namespace PaymentGateway
 
             return data;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public GatewayResponse Capture(Capture request)
+        {
+            var data = new GatewayResponse(MakeRequest(request));
+            if (data.Response != 1)
+                throw new GatewayException($"Gateway error on {nameof(Capture)}: {data.ResponseText}");
+
+            return data;
+        }
     }
 }

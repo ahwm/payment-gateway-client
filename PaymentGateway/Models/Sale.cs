@@ -151,6 +151,9 @@ namespace PaymentGateway.Models
         new internal static string Type => "offline";
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class Capture
     {
         internal static string Type => "capture";
