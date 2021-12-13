@@ -46,10 +46,12 @@ namespace PaymentGateway.Models
         /// Name on the customer's ACH account
         /// </summary>
         public string CheckName { get; set; }
+
         /// <summary>
         /// Customer's bank routing number
         /// </summary>
         public string CheckABA { get; set; }
+
         /// <summary>
         /// Customer's bank account number
         /// </summary>
@@ -147,5 +149,46 @@ namespace PaymentGateway.Models
     {
         [ParameterName("type")]
         new internal static string Type => "offline";
+    }
+
+    public class Capture
+    {
+        internal static string Type => "capture";
+
+        /// <summary>
+        /// Original payment gateway transaction id
+        /// </summary>
+        public string TransactionId { get; set; }
+
+        /// <summary>
+        /// <para>Total amount to be settled. This amount must be equal to or less than the original authorized amount.</para>
+        /// <para>Format: x.xx</para>
+        /// </summary>
+        public string Amount { get; set; }
+
+        /// <summary>
+        /// Shipping tracking number
+        /// </summary>
+        [ParameterName("tracking_number")]
+        public string TrackingNumber { get; set; }
+
+        /// <summary>
+        /// Order id.
+        /// </summary>
+        public string OrderId { get; set; }
+
+        /// <summary>
+        /// <para>Shipping carrier.</para>
+        /// <para>Values: 'ups', 'fedex', 'dhl', or 'usps'</para>
+        /// </summary>
+        [ParameterName("shipping_carrier")]
+        public string ShippingCarrier { get; set; }
+
+        /// <summary>
+        /// <para>Cardholder signature image.</para>
+        /// <para>Format: base64 encoded raw PNG image. (16kiB maximum)</para>
+        /// </summary>
+        [ParameterName("signature_image")]
+        public string SignatureImage { get; set; }
     }
 }

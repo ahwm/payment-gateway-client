@@ -81,20 +81,27 @@ namespace PaymentGateway
             RequestStarted?.Invoke(this, new GatewayEventArgs(Values));
 
             Dictionary<string, string> resp = new Dictionary<string, string>();
-            using (HttpClient client = new HttpClient())
+            try
             {
-                using (var postContent = new FormUrlEncodedContent(Values))
-                using (HttpResponseMessage response = client.PostAsync(Provider.PostUrl + "/transact.php", postContent).Result)
+                using (HttpClient client = new HttpClient())
                 {
-                    response.EnsureSuccessStatusCode();
-                    using (HttpContent content = response.Content)
+                    using (var postContent = new FormUrlEncodedContent(Values))
+                    using (HttpResponseMessage response = client.PostAsync(Provider.PostUrl + "/transact.php", postContent).Result)
                     {
-                        string result = content.ReadAsStringAsync().Result;
-                        var values = HttpUtility.ParseQueryString(result);
-                        foreach (var key in values.AllKeys)
-                            resp.Add(key, values[key]);
+                        response.EnsureSuccessStatusCode();
+                        using (HttpContent content = response.Content)
+                        {
+                            string result = content.ReadAsStringAsync().Result;
+                            var values = HttpUtility.ParseQueryString(result);
+                            foreach (var key in values.AllKeys)
+                                resp.Add(key, values[key]);
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                throw new GatewayException($"Unable to communicate with gateway. Ensure {nameof(Provider.PostUrl)} has a correct value.", ex);
             }
 
             RequestCompleted?.Invoke(this, new GatewayEventArgs(Values));
