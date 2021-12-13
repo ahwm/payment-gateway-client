@@ -17,7 +17,11 @@ namespace PaymentGateway
         /// <param name="msg"></param>
         public GatewayException(string msg) : base(msg)
         { }
-        /// <inheritdoc>
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="innerException"></param>
         public GatewayException(string msg, Exception innerException) : base(msg, innerException)
         { }
     }
