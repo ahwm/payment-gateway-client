@@ -10,7 +10,8 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/ahwm/payment-gateway-client</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/ahwm/payment-gateway-client</RepositoryUrl>
-		<Version>0.0.1-beta.1</Version>
+		<Version>0.0.1-beta.2</Version>
+		<AssemblyVersion>0.0.0.0</AssemblyVersion>
 		<PackageReleaseNotes>Implemented Sale/Authorization/Credit/Validate/Offline and Capture.</PackageReleaseNotes>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Description>Client for interacting with Transaction Gateway endpoints for multiple providers such as Network Merchants (NMI)</Description>
