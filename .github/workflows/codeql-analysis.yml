@@ -68,3 +68,9 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
+
+    - name: Delete Package Versions
+      uses: actions/delete-package-versions@v2.0.0
+      with:
+          package-name: 'PaymentGatewayClient'
+          min-versions-to-keep: 4
