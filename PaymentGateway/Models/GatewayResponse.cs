@@ -33,7 +33,7 @@ namespace PaymentGateway.Models
         public GatewayResponse(Dictionary<string, string> values)
         {
             Response = Convert.ToInt32(values["response"]);
-            ResponseText = values["responseText"];
+            ResponseText = values["responsetext"];
             Data = new ReadOnlyDictionary<string, string>(values);
         }
     }

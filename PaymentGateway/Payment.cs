@@ -15,8 +15,6 @@ namespace PaymentGateway
         public GatewayResponse Sale(Sale request)
         {
             var data = new GatewayResponse(MakeRequest(request));
-            if (data.Response != 1)
-                throw new GatewayException($"Gateway error on {nameof(Sale)}: {data.ResponseText}");
 
             return data;
         }
@@ -29,8 +27,6 @@ namespace PaymentGateway
         public GatewayResponse Authorize(Authorize request)
         {
             var data = new GatewayResponse(MakeRequest(request));
-            if (data.Response != 1)
-                throw new GatewayException($"Gateway error on {nameof(Authorize)}: {data.ResponseText}");
 
             return data;
         }
@@ -43,8 +39,6 @@ namespace PaymentGateway
         public GatewayResponse Credit(Credit request)
         {
             var data = new GatewayResponse(MakeRequest(request));
-            if (data.Response != 1)
-                throw new GatewayException($"Gateway error on {nameof(Credit)}: {data.ResponseText}");
 
             return data;
         }
@@ -57,8 +51,6 @@ namespace PaymentGateway
         public GatewayResponse Validate(Validate request)
         {
             var data = new GatewayResponse(MakeRequest(request));
-            if (data.Response != 1)
-                throw new GatewayException($"Gateway error on {nameof(Validate)}: {data.ResponseText}");
 
             return data;
         }
@@ -71,8 +63,6 @@ namespace PaymentGateway
         public GatewayResponse Offline(Offline request)
         {
             var data = new GatewayResponse(MakeRequest(request));
-            if (data.Response != 1)
-                throw new GatewayException($"Gateway error on {nameof(Offline)}: {data.ResponseText}");
 
             return data;
         }
@@ -85,8 +75,6 @@ namespace PaymentGateway
         public GatewayResponse Capture(Capture request)
         {
             var data = new GatewayResponse(MakeRequest(request));
-            if (data.Response != 1)
-                throw new GatewayException($"Gateway error on {nameof(Capture)}: {data.ResponseText}");
 
             return data;
         }
