@@ -25,7 +25,9 @@ namespace PaymentGatewayClient.Tests
                 City = "Chicago",
                 State = "IL",
                 Zip = "60193",
-                Payment = "check"
+                Payment = "check",
+                AccountHolderType = "business",
+                AccountType = "checking"
             };
 
             var expectedResponse = 1;
@@ -52,7 +54,9 @@ namespace PaymentGatewayClient.Tests
                 City = "Chicago",
                 State = "IL",
                 Zip = "60193",
-                Payment = "check"
+                Payment = "check",
+                AccountHolderType = "business",
+                AccountType = "checking"
             };
 
             var expectedResponse = 2;

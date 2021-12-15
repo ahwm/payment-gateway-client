@@ -6,8 +6,6 @@ before_build:
     dotnet restore
 build:
   verbosity: minimal
-test_script:
-  - ps: dotnet test /p:CollectCoverage=true /p:UseSourceLink=true /p:DeterministicReport=true
 artifacts:
   - path: '**\*.nupkg'
     name: NuGet

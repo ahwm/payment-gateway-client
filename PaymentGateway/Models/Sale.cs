@@ -137,6 +137,12 @@ namespace PaymentGateway.Models
         /// </summary>
         [ParameterName("processor_id")]
         public string ProcessorId { get; set; }
+
+        /// <summary>
+        /// Set to "enabled" <em>and</em> use the test account information in the provider's documentation to test a one-off transaction. 
+        /// </summary>
+        [ParameterName("test_mode")]
+        public string TestMode { get; set; } = "";
     }
 
     /// <summary>

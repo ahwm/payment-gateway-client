@@ -16,7 +16,7 @@ namespace PaymentGateway.Models
         /// 
         /// </summary>
         public ReadOnlyDictionary<string, string> Results { get { return new ReadOnlyDictionary<string, string>(_results); } }
-        private Dictionary<string, string> _results;
+        private readonly Dictionary<string, string> _results;
 
         /// <summary>
         /// 
