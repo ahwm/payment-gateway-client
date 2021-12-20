@@ -1,7 +1,4 @@
 ﻿using PaymentGateway.Attributes;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PaymentGateway.Models
 {
@@ -91,6 +88,43 @@ namespace PaymentGateway.Models
         [ParameterName("plan_id")]
         public string PlanId { get; set; }
 
+        /// <summary>
+        /// <para>The number of payments before the recurring plan is complete.</para>
+        /// <para>Notes: '0' for until canceled</para>
+        /// </summary>
+        [ParameterName("plan_payments")]
+        public string PlanPayments { get; set; }
+
+        /// <summary>
+        /// <para>The plan amount to be charged each billing cycle.</para>
+        /// <para>Format: x.xx</para>
+        /// </summary>
+        [ParameterName("plan_amount")]
+        public string PlanAmount { get; set; }
+
+        /// <summary>
+        /// How often, in days, to charge the customer. Cannot be set with 'month_frequency' or 'day_of_month'.
+        /// </summary>
+        [ParameterName("day_frequency")]
+        public string DayFrequency { get; set; }
+
+        /// <summary>
+        /// <para>How often, in months, to charge the customer. Cannot be set with 'day_frequency'. Must be set with 'day_of_month'.</para>
+        /// <para>Values: 1 through 24</para>
+        /// </summary>
+        [ParameterName("month_frequency")]
+        public string MonthFrequency { get; set; }
+
+        /// <summary>
+        /// <para>The day that the customer will be charged. Cannot be set with 'day_frequency'. Must be set with 'month_frequency'.</para>
+        /// <para>Values: 1 through 31 - for months without 29, 30, or 31 days, the charge will be on the last day</para>
+        /// </summary>
+        [ParameterName("day_of_month")]
+        public string DayOfMonth { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [ParameterName("start_date")]
         public string StartDate { get; set; }
 
@@ -118,6 +152,9 @@ namespace PaymentGateway.Models
         [ParameterName("ccexp")]
         public string CardExpiration { get; set; }
 
+        /// <summary>
+        /// Type of payment ("creditcard" or "check")
+        /// </summary>
         public string Payment { get; set; } = "creditcard";
 
         /// <summary>
@@ -161,11 +198,13 @@ namespace PaymentGateway.Models
         /// <summary>
         /// 
         /// </summary>
+        [ParameterName("first_name")]
         public string FirstName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [ParameterName("last_name")]
         public string LastName { get; set; }
 
         /// <summary>
@@ -187,6 +226,47 @@ namespace PaymentGateway.Models
         /// 
         /// </summary>
         public string Zip { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Country { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Phone { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Email { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Company { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Address2 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Fax { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string OrderId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [ParameterName("order_description")]
+        public string OrderDescription { get; set; }
 
         /// <summary>
         /// If using Multiple MIDs, route to this processor (processor_id is obtained under Settings → Transaction Routing in the Control Panel).
@@ -211,5 +291,35 @@ namespace PaymentGateway.Models
         /// </summary>
         [ParameterName("source_transaction_id")]
         public string SourceTransactionId { get; set; }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class UpdateSubscription : AddSubscription
+    {
+        [ParameterName("recurring")]
+        new internal static string Type => "update_subscription";
+
+        /// <summary>
+        /// The subscription ID that will be updated.
+        /// </summary>
+        [ParameterName("subscription_id")]
+        public string SubscriptionId { get; set; }
+    }
+
+    /// <summary>
+    /// Delete a subscription
+    /// </summary>
+    public class DeleteSubcription
+    {
+        [ParameterName("recurring")]
+        internal static string Type => "delete_subscription";
+
+        /// <summary>
+        /// The subscription ID that will be deleted.
+        /// </summary>
+        [ParameterName("subscription_id")]
+        public string SubscriptionId { get; set; }
     }
 }

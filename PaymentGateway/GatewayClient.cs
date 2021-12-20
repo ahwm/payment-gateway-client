@@ -1,12 +1,10 @@
-﻿using PaymentGateway.Helpers;
-using PaymentGateway.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Web;
-using System.Xml.Linq;
+using PaymentGateway.Helpers;
+using PaymentGateway.Models;
 
 namespace PaymentGateway
 {
