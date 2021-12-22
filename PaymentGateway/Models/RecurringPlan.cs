@@ -91,6 +91,7 @@ namespace PaymentGateway.Models
         /// <summary>
         /// <para>The number of payments before the recurring plan is complete.</para>
         /// <para>Notes: '0' for until canceled</para>
+        /// <para><em>Omit if 'PlanId' is set</em></para>
         /// </summary>
         [ParameterName("plan_payments")]
         public string PlanPayments { get; set; }
@@ -98,12 +99,14 @@ namespace PaymentGateway.Models
         /// <summary>
         /// <para>The plan amount to be charged each billing cycle.</para>
         /// <para>Format: x.xx</para>
+        /// <para><em>Omit if 'PlanId' is set</em></para>
         /// </summary>
         [ParameterName("plan_amount")]
         public string PlanAmount { get; set; }
 
         /// <summary>
-        /// How often, in days, to charge the customer. Cannot be set with 'month_frequency' or 'day_of_month'.
+        /// <para>How often, in days, to charge the customer. Cannot be set with 'month_frequency' or 'day_of_month'.</para>
+        /// <para><em>Omit if 'PlanId' is set</em></para>
         /// </summary>
         [ParameterName("day_frequency")]
         public string DayFrequency { get; set; }
@@ -111,6 +114,7 @@ namespace PaymentGateway.Models
         /// <summary>
         /// <para>How often, in months, to charge the customer. Cannot be set with 'day_frequency'. Must be set with 'day_of_month'.</para>
         /// <para>Values: 1 through 24</para>
+        /// <para><em>Omit if 'PlanId' is set</em></para>
         /// </summary>
         [ParameterName("month_frequency")]
         public string MonthFrequency { get; set; }
@@ -118,12 +122,14 @@ namespace PaymentGateway.Models
         /// <summary>
         /// <para>The day that the customer will be charged. Cannot be set with 'day_frequency'. Must be set with 'month_frequency'.</para>
         /// <para>Values: 1 through 31 - for months without 29, 30, or 31 days, the charge will be on the last day</para>
+        /// <para><em>Omit if 'PlanId' is set</em></para>
         /// </summary>
         [ParameterName("day_of_month")]
         public string DayOfMonth { get; set; }
 
         /// <summary>
-        /// 
+        /// <para>The first day that the customer will be charged.</para>
+        /// <para>Format: YYYYMMDD</para>
         /// </summary>
         [ParameterName("start_date")]
         public string StartDate { get; set; }
@@ -311,7 +317,7 @@ namespace PaymentGateway.Models
     /// <summary>
     /// Delete a subscription
     /// </summary>
-    public class DeleteSubcription
+    public class DeleteSubscription
     {
         [ParameterName("recurring")]
         internal static string Type => "delete_subscription";

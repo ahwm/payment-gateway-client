@@ -40,5 +40,29 @@ namespace PaymentGateway
 
             return data;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public GatewayResponse UpdateSubscription(UpdateSubscription request)
+        {
+            var data = new GatewayResponse(MakeRequest(request));
+
+            return data;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public GatewayResponse DeleteSubscription(DeleteSubscription request)
+        {
+            var data = new GatewayResponse(MakeRequest(request));
+
+            return data;
+        }
     }
 }
