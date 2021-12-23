@@ -1,6 +1,6 @@
 name: New Provider
 description: Request a new provider added
-title: "[PROVIDER] <title>"
+title: "[PROVIDER] <provider name>"
 labels: ["New Provider"]
 assignees:
   - ahwm
@@ -33,3 +33,8 @@ body:
       placeholder: ex. https://secure.networkmerchants.com
     validations:
       required: true
+  - type: textarea
+    attributes:
+      label: Additional Details
+      description: Please provide any additional details
+      placeholder: Hints or notes about the provider that may be useful
