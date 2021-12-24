@@ -1,10 +1,16 @@
 ﻿using System;
+using PaymentGateway.Attributes;
+
 namespace PaymentGateway.Models
 {
-    public class Invoicing
+    /// <summary>
+    /// 
+    /// </summary>
+    public class CreateInvoice
     {
-        public Invoicing()
-        {
-        }
+        [ParameterName("invoicing")]
+        internal static string Type => "add_invoice";
+
+
     }
 }
