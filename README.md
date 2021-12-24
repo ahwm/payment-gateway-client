@@ -26,7 +26,7 @@ Original documentation: <https://integratepayments.transactiongateway.com/mercha
 * [MSG Payment Systems](https://msgpay.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 * [National Processing](https://secure.nationalprocessinggateway.com/merchants/resources/integration/integration_portal.php)
 * [Network Merchants (NMI)](https://secure.networkmerchants.com/merchants/resources/integration/integration_portal.php)
-* [PayaBli (Centavo)](https://centavo.transactiongateway.com/merchants/resources/integration/integration_portal.php)
+* [Payabli (Centavo)](https://centavo.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 * [PayKings](https://paykings.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 * [Payscape](https://secure.payscapegateway.com/merchants/resources/integration/integration_portal.php)
 * [PlanetAuthorize](https://secure.planetauthorizegateway.com/merchants/resources/integration/integration_portal.php)
