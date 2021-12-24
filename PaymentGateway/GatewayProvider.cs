@@ -32,9 +32,14 @@ namespace PaymentGateway
         public static GatewayProvider BottomLinePayments { get; } = new GatewayProvider("https://secure.bottomlinegateway.com/api");
 
         /// <summary>
-        /// Canyon Pay. See <a href="https://canyonpay.transactiongateway.com/merchants/resources/integration/integration_portal.php">https:/canyonpay.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+        /// Canyon Pay. See <a href="https://canyonpay.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://canyonpay.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
         /// </summary>
         public static GatewayProvider CanyonPay { get; } = new GatewayProvider("https://canyonpay.transactiongateway.com/api");
+
+        /// <summary>
+        /// CryptoBucks (not for use with crypto currency API). See <a href="https://secure.apsmerchantgateway.com/merchants/resources/integration/integration_portal.php">https://secure.apsmerchantgateway.com/merchants/resources/integration/integration_portal.php</a>
+        /// </summary>
+        public static GatewayProvider CryptoBucks { get; } = new GatewayProvider("https://secure.apsmerchantgateway.com/api");
 
         /// <summary>
         /// CyoGate. See <a href="https://secure.cyogate.net/merchants/resources/integration/integration_portal.php">https://secure.cyogate.net/merchants/resources/integration/integration_portal.php</a>
@@ -85,6 +90,11 @@ namespace PaymentGateway
         /// Network Merchants (NMI). See <a href="https://secure.networkmerchants.com/merchants/resources/integration/integration_portal.php">https://secure.networkmerchants.com/merchants/resources/integration/integration_portal.php</a>
         /// </summary>
         public static GatewayProvider NMI { get; } = new GatewayProvider("https://secure.networkmerchants.com/api");
+
+        /// <summary>
+        /// Payabli (Centavo Inc). See <a href="https://centavo.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://centavo.transactiongateway.comm/merchants/resources/integration/integration_portal.php</a>
+        /// </summary>
+        public static GatewayProvider Payabli { get; } = new GatewayProvider("https://centavo.transactiongateway.com/api");
 
         /// <summary>
         /// PayKings. See <a href="https://paykings.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://paykings.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
