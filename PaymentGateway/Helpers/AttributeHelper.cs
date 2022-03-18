@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using PaymentGateway.Attributes;
 
@@ -22,6 +24,22 @@ namespace PaymentGateway.Helpers
             }
 
             return l;
+        }
+
+        static bool IsList(TypeInfo type)
+        {
+            return type.IsGenericType && (type.GetGenericTypeDefinition() == typeof(List<>)) && type.GenericTypeArguments.FirstOrDefault() == typeof(string);
+        }
+
+        static string ConvertFromList<T>(object obj)
+        {
+            T list = (T)obj;
+
+            //string arr = "";
+            //foreach (object i in list)
+            //    arr += $"{(arr.Length > 0 ? "," : "")}{i}";
+
+            return String.Join(",", list);
         }
     }
 }
