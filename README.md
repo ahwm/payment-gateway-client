@@ -1,5 +1,7 @@
 # Payment Gateway Client
 
+[![nuget](https://img.shields.io/nuget/vpre/PaymentGatewayClient.svg)](https://www.nuget.org/packages/PaymentGatewayClient)
+
 There are several "smaller" merchant payment gateways that all use the same API system. This client is meant to work with all of them. Below is a list of known providers that use this system.
 
 Original documentation: <https://integratepayments.transactiongateway.com/merchants/resources/integration/integration_portal.php>
