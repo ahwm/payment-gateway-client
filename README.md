@@ -49,8 +49,8 @@ If you find another gateway that uses this system, please file an issue to get t
 ### Credit/Debit Cards
 
 ```csharp
-            var securityKey = "6457Thfj624V5r7WUwc5v6a68Zsd6YEm";
-            var client = new GatewayClient(securityKey);
+            var securityKey = "6457Thfj624V5r7WUwc5v6a68Zsd6YEm"; // test account
+            var client = new GatewayClient(securityKey, GatewayProvider.NMI);
             Sale sale = new Sale
             {
                 CardNumber = "4111111111111111",
@@ -72,8 +72,8 @@ If you find another gateway that uses this system, please file an issue to get t
 ### ACH/eCheck
 
 ```csharp
-            var securityKey = "6457Thfj624V5r7WUwc5v6a68Zsd6YEm";
-            var client = new GatewayClient(securityKey);
+            var securityKey = "6457Thfj624V5r7WUwc5v6a68Zsd6YEm"; // test account
+            var client = new GatewayClient(securityKey, GatewayProvider.NMI);
             Sale sale = new Sale
             {
                 CheckABA = "123123123",
