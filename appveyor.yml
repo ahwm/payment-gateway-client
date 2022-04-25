@@ -13,10 +13,10 @@ artifacts:
 for:
 
 -
- configuration: Debug
+ configuration: Release
   
  deploy:
    provider: NuGet
    artifact: /.nupkg/
    api_key:
-     secure: tas6g7o5bleaFS68B8r1Hip3nDutOGGFKZT9Gm8RETKeLioLSeB0eWSajhWAfLKf
+     secure: d6j0MYClUTLLg2QiYeQVhiU7akN9KHHt/OqOo+W+Hk2pVkH2mtp/KtsHU3etNT4k
