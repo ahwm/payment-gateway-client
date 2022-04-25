@@ -132,6 +132,11 @@ namespace PaymentGateway
         public static GatewayProvider TranzCrypt { get; } = new GatewayProvider("https://secure.tranzcrypt.com/api");
 
         /// <summary>
+        /// Valued Merchant Services. See <a href="https://https://secure.valuedmerchantgateway.com/merchants/resources/integration/integration_portal.php">https://secure.valuedmerchantgateway.com/merchants/resources/integration/integration_portal.php</a>
+        /// </summary>
+        public static GatewayProvider ValuedMerchants { get; } = new GatewayProvider("https://secure.valuedmerchantgateway.com/api");
+
+        /// <summary>
         /// Vericheck. See <a href="https://vericheck.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://vericheck.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
         /// </summary>
         public static GatewayProvider Vericheck { get; } = new GatewayProvider("https://vericheck.transactiongateway.com/api");

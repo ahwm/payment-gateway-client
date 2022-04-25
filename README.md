@@ -34,9 +34,10 @@ Original documentation: <https://integratepayments.transactiongateway.com/mercha
 * [SecureGlobalPay](https://secureglobalpay.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 * [SkyBank Financial](https://secure.skybankgateway.com/merchants/resources/integration/integration_portal.php)
 * [TranzCrypt](https://secure.tranzcrypt.com/merchants/resources/integration/integration_portal.php)
+* [Valued Merchant Services](https://secure.valuedmerchantgateway.com/merchants/resources/integration/integration_portal.php)
 * [Vericheck](https://vericheck.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 * [VizyPay](https://vizypay.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 
-***Note:*** *This is not an indication of endorsement and there is no guarantee of compatibility. With the exception of NMI, these providers have not been tested. Based on current experience, it may be possible to use any of these (and new) providers using the `NMI` API endpoint though this situation has not been tested.*
+***Note:*** *This is not an indication of endorsement and there is no guarantee of compatibility. With the exception of NMI, these providers have not been tested. Based on current experience, it may be possible to use any of these (and new) providers using the `NMI` API endpoint though this use case has not been tested.*
 
 If you find another gateway that uses this system, please file an issue to get this list updated.
