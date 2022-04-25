@@ -41,3 +41,64 @@ Original documentation: <https://integratepayments.transactiongateway.com/mercha
 ***Note:*** *This is not an indication of endorsement and there is no guarantee of compatibility. With the exception of NMI, these providers have not been tested. Based on current experience, it may be possible to use any of these (and new) providers using the `NMI` API endpoint though this use case has not been tested.*
 
 If you find another gateway that uses this system, please file an issue to get this list updated.
+
+## Usage
+
+### Credit/Debit Cards
+
+```csharp
+            var securityKey = "6457Thfj624V5r7WUwc5v6a68Zsd6YEm";
+            var client = new GatewayClient(securityKey);
+            Sale sale = new Sale
+            {
+                CardNumber = "4111111111111111",
+                CardExpiration = "0323",
+                CVV = "999",
+                Amount = "5.00",
+                FirstName = "John",
+                LastName = "Smith",
+                Address1 = "1234 Main St.",
+                City = "Chicago",
+                State = "IL",
+                Zip = "60193",
+                Payment = "creditcard"
+            };
+
+            var result = client.Sale(sale);
+```
+
+### ACH/eCheck
+
+```csharp
+            var securityKey = "6457Thfj624V5r7WUwc5v6a68Zsd6YEm";
+            var client = new GatewayClient(securityKey);
+            Sale sale = new Sale
+            {
+                CheckABA = "123123123",
+                CheckAccount = "123123123",
+                CheckName = "John Smith",
+                StandardEntryClass = "WEB",
+                Amount = "5.00",
+                FirstName = "John",
+                LastName = "Smith",
+                Address1 = "1234 Main St.",
+                City = "Chicago",
+                State = "IL",
+                Zip = "60193",
+                Payment = "check",
+                AccountHolderType = "business",
+                AccountType = "checking"
+            };
+
+            var result = client.Sale(sale);
+```
+
+### Response
+
+```csharp
+public class GatewayResponse {
+    public readonly int Response; // 1 for approved, 2 for declined, 3 for error
+    public readonly string ResponseText;
+    public readonly ReadOnlyDictionary<string, string> Data;
+}
+```
