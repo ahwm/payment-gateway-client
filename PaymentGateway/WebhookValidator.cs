@@ -4,6 +4,9 @@ using System.Text;
 
 namespace PaymentGateway
 {
+    /// <summary>
+    /// Methods to validate webhook events
+    /// </summary>
     public static class WebhookValidator
     {
         /// <summary>
@@ -13,6 +16,7 @@ namespace PaymentGateway
         /// <param name="signingKey">Signing Key from gateway control panel</param>
         /// <param name="webhookSignature">Contents of "webhook-Signature" header</param>
         /// <returns></returns>
+        /// <exception cref="GatewayException">If "webhook-Signature" header is missing nonce (t= paramenter) or signature (s= parameter)</exception>
         static public bool VerifyWebhook(string body, string signingKey, string webhookSignature)
         {
             string[] sig = webhookSignature.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
