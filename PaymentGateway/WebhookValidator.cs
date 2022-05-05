@@ -31,10 +31,10 @@ namespace PaymentGateway
 
         static string ByteToString(byte[] buff)
         {
-            string sbinary = "";
+            var sbinary = new StringBuilder();
             for (int i = 0; i < buff.Length; i++)
-                sbinary += buff[i].ToString("x2"); /* hex format */
-            return sbinary;
+                sbinary.Append(buff[i].ToString("x2")); /* hex format */
+            return sbinary.ToString();
         }
     }
 }
