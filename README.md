@@ -99,7 +99,7 @@ If you find another gateway that uses this system, please file an issue to get t
 
 ```csharp
 public class GatewayResponse {
-    public readonly int Response; // 1 for approved, 2 for declined, 3 for error
+    public readonly GatewayResponseCode Response; // Approved, Declined, Error
     public readonly string ResponseText;
     public readonly ReadOnlyDictionary<string, string> Data;
 }
