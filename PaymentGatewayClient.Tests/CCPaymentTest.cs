@@ -171,7 +171,7 @@ namespace PaymentGatewayClient.Tests
             Validate sale = new Validate
             {
                 CardNumber = "4111111111111111",
-                CardExpiration = "0321",
+                CardExpiration = "0323",
                 CVV = "999",
                 //Amount = "1.00",
                 FirstName = "John",
@@ -197,7 +197,7 @@ namespace PaymentGatewayClient.Tests
             Offline sale = new Offline
             {
                 CardNumber = "4111111111111111",
-                CardExpiration = "0321",
+                CardExpiration = "0323",
                 CVV = "999",
                 Amount = "1.00",
                 FirstName = "John",
