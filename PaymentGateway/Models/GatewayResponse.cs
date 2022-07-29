@@ -14,7 +14,7 @@ namespace PaymentGateway.Models
         /// <summary>
         /// 
         /// </summary>
-        public int Response { get; }
+        public GatewayResponseCode Response { get; }
 
         /// <summary>
         /// 
