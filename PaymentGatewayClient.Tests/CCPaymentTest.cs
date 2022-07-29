@@ -27,7 +27,7 @@ namespace PaymentGatewayClient.Tests
                 Payment = "creditcard"
             };
 
-            var expectedResponse = 1;
+            var expectedResponse = GatewayResponseCode.Approved;
             var result = client.Sale(sale);
 
             result.Response.ShouldBe(expectedResponse);
@@ -53,7 +53,7 @@ namespace PaymentGatewayClient.Tests
                 Payment = "creditcard"
             };
 
-            var expectedResponse = 2;
+            var expectedResponse = GatewayResponseCode.Declined;
             var result = client.Sale(sale);
 
             result.Response.ShouldBe(expectedResponse);
@@ -79,7 +79,7 @@ namespace PaymentGatewayClient.Tests
                 Payment = "creditcard"
             };
 
-            var expectedResponse = 1;
+            var expectedResponse = GatewayResponseCode.Approved;
             var result = client.Authorize(sale);
 
             result.Response.ShouldBe(expectedResponse);
@@ -105,7 +105,7 @@ namespace PaymentGatewayClient.Tests
                 Payment = "creditcard"
             };
 
-            var expectedResponse = 2;
+            var expectedResponse = GatewayResponseCode.Declined;
             var result = client.Authorize(sale);
 
             result.Response.ShouldBe(expectedResponse);
@@ -131,7 +131,7 @@ namespace PaymentGatewayClient.Tests
                 Payment = "creditcard"
             };
 
-            var expectedResponse = 1;
+            var expectedResponse = GatewayResponseCode.Approved;
             var result = client.Credit(sale);
 
             result.Response.ShouldBe(expectedResponse);
@@ -157,7 +157,7 @@ namespace PaymentGatewayClient.Tests
                 Payment = "creditcard"
             };
 
-            var expectedResponse = 3;
+            var expectedResponse = GatewayResponseCode.Error;
             var result = client.Credit(sale);
 
             result.Response.ShouldBe(expectedResponse);
@@ -183,7 +183,7 @@ namespace PaymentGatewayClient.Tests
                 Payment = "creditcard"
             };
 
-            var expectedResponse = 1;
+            var expectedResponse = GatewayResponseCode.Approved;
             var result = client.Validate(sale);
 
             result.Response.ShouldBe(expectedResponse);
@@ -210,7 +210,7 @@ namespace PaymentGatewayClient.Tests
                 AuthorizationCode = "123456"
             };
 
-            var expectedResponse = 1;
+            var expectedResponse = GatewayResponseCode.Approved;
             var result = client.Offline(sale);
 
             result.Response.ShouldBe(expectedResponse);
@@ -237,7 +237,7 @@ namespace PaymentGatewayClient.Tests
                 AuthorizationCode = "123457"
             };
 
-            var expectedResponse = 3;
+            var expectedResponse = GatewayResponseCode.Error;
             var result = client.Offline(sale);
 
             result.Response.ShouldBe(expectedResponse);

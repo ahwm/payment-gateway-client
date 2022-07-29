@@ -30,7 +30,7 @@ namespace PaymentGatewayClient.Tests
                 AccountType = "checking"
             };
 
-            var expectedResponse = 1;
+            var expectedResponse = GatewayResponseCode.Approved;
             var result = client.Sale(sale);
 
             result.Response.ShouldBe(expectedResponse);
@@ -59,7 +59,7 @@ namespace PaymentGatewayClient.Tests
                 AccountType = "checking"
             };
 
-            var expectedResponse = 2;
+            var expectedResponse = GatewayResponseCode.Declined;
             var result = client.Sale(sale);
 
             result.Response.ShouldBe(expectedResponse);
