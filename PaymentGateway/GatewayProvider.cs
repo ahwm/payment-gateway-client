@@ -27,6 +27,11 @@ namespace PaymentGateway
         public static GatewayProvider AliantPayments { get; } = new GatewayProvider("https://secure.apsmerchantgateway.com/api");
 
         /// <summary>
+        /// Aliant Payments. See <a href="https://gateway.alignpay.com/merchants/resources/integration/integration_portal.php">https://gateway.alignpay.com/merchants/resources/integration/integration_portal.php</a>
+        /// </summary>
+        public static GatewayProvider AlignPay { get; } = new GatewayProvider("https://gateway.alignpay.com/api");
+
+        /// <summary>
         /// Bottom Line Payments. See <a href="https://secure.bottomlinegateway.com/merchants/resources/integration/integration_portal.php">https://secure.bottomlinegateway.com/merchants/resources/integration/integration_portal.php</a>
         /// </summary>
         public static GatewayProvider BottomLinePayments { get; } = new GatewayProvider("https://secure.bottomlinegateway.com/api");
@@ -35,6 +40,16 @@ namespace PaymentGateway
         /// Canyon Pay. See <a href="https://canyonpay.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://canyonpay.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
         /// </summary>
         public static GatewayProvider CanyonPay { get; } = new GatewayProvider("https://canyonpay.transactiongateway.com/api");
+
+        /// <summary>
+        /// Charge1. See <a href="https://secure.charge1.com/merchants/resources/integration/integration_portal.php">https://secure.charge1.com/merchants/resources/integration/integration_portal.php</a>
+        /// </summary>
+        public static GatewayProvider Charge1 { get; } = new GatewayProvider("https://secure.charge1.com/api");
+
+        /// <summary>
+        /// CMS. See <a href="https://cms.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://cms.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+        /// </summary>
+        public static GatewayProvider CMS { get; } = new GatewayProvider("https://cms.transactiongateway.com/api");
 
         /// <summary>
         /// CryptoBucks (not for use with crypto currency API). See <a href="https://secure.apsmerchantgateway.com/merchants/resources/integration/integration_portal.php">https://secure.apsmerchantgateway.com/merchants/resources/integration/integration_portal.php</a>
@@ -65,6 +80,11 @@ namespace PaymentGateway
         /// Inspire Commerce (.pay / dot pay). See <a href="https://secure.inspiregateway.net/merchants/resources/integration/integration_portal.php">https://secure.inspiregateway.net/merchants/resources/integration/integration_portal.php</a>
         /// </summary>
         public static GatewayProvider InspireCommerceDotPay { get; } = new GatewayProvider("https://secure.inspiregateway.net/api");
+
+        /// <summary>
+        /// Integrate Payments. See <a href="https://integratepayments.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://integratepayments.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+        /// </summary>
+        public static GatewayProvider IntegratePayments { get; } = new GatewayProvider("https://integratepayments.transactiongateway.com/api");
 
         /// <summary>
         /// Merchant Guy. See <a href="https://secure.merchantguygateway.com/merchants/resources/integration/integration_portal.php">https://secure.merchantguygateway.com/merchants/resources/integration/integration_portal.php</a>
@@ -107,6 +127,11 @@ namespace PaymentGateway
         public static GatewayProvider Payscape { get; } = new GatewayProvider("https://secure.payscapegateway.com/api");
 
         /// <summary>
+        /// Pay Engines. See <a href="https://payengines.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://payengines.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+        /// </summary>
+        public static GatewayProvider PayEngines { get; } = new GatewayProvider("https://payengines.transactiongateway.com/api");
+
+        /// <summary>
         /// PlanetAuthorize. See <a href="https://secure.planetauthorizegateway.com/merchants/resources/integration/integration_portal.php">https://secure.planetauthorizegateway.com/merchants/resources/integration/integration_portal.php</a>
         /// </summary>
         public static GatewayProvider PlanetAuthorize { get; } = new GatewayProvider("https://secure.planetauthorizegateway.com/api");
@@ -120,6 +145,11 @@ namespace PaymentGateway
         /// SecureGlobalPay. See <a href="https://secureglobalpay.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://secureglobalpay.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
         /// </summary>
         public static GatewayProvider SecureGlobalPay { get; } = new GatewayProvider("https://secureglobalpay.transactiongateway.com/api");
+
+        /// <summary>
+        /// Sibacpay. See <a href="https://sibacpay.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://sibacpay.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+        /// </summary>
+        public static GatewayProvider Sibacpay { get; } = new GatewayProvider("https://sibacpay.transactiongateway.com/api");
 
         /// <summary>
         /// SkyBank Financial. See <a href="https://secure.skybankgateway.com/merchants/resources/integration/integration_portal.php">https://secure.skybankgateway.com/merchants/resources/integration/integration_portal.php</a>
