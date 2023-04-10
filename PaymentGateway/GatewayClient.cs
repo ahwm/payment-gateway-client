@@ -99,7 +99,7 @@ namespace PaymentGateway
             }
             catch (Exception ex)
             {
-                throw new GatewayException($"Unable to communicate with gateway ({Provider.PostUrl}). Ensure {nameof(Provider.PostUrl)} has a correct value. See inner exception for details.", ex);
+                throw new GatewayException($"Unable to communicate with gateway ({Provider.PostUrl}). Ensure {nameof(Provider.PostUrl)} has a correct value and the security key is correct. See inner exception for details.", ex);
             }
 
             RequestCompleted?.Invoke(this, new GatewayEventArgs(resp));

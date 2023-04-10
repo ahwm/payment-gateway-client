@@ -109,3 +109,28 @@ public class GatewayResponse {
     public readonly ReadOnlyDictionary<string, string> Data;
 }
 ```
+
+### Web hook Validation
+
+```csharp
+ctx = HttpContext.Current;
+string reqBody = "";
+try
+{
+    using (StreamReader sr = new StreamReader(ctx.Request.InputStream))
+        reqBody = await sr.ReadToEndAsync();
+}
+catch { }
+WriteLog($"------{DateTime.UtcNow:R}---------------");
+WriteLog(ctx.Request.Headers["webhook-Signature"]);
+WriteLog(reqBody);
+
+var status = WebhookValidator.VerifyWebhook(reqBody, "WEBHOOK VALIDATION KEY HERE", ctx.Request.Headers["webhook-Signature"]);
+if (!status)
+{
+    WriteLog($"------{DateTime.UtcNow:R}---------------");
+    WriteLog("Webhook validation failed!");
+    return;
+}
+var body = JsonConvert.DeserializeObject<JArray>(reqBody);
+```

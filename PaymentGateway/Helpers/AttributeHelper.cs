@@ -16,8 +16,30 @@ namespace PaymentGateway.Helpers
             {
                 if (property.GetValue(model) != null)
                 {
-                    if (property.GetCustomAttribute(typeof(ParameterNameAttribute)) is ParameterNameAttribute attribute)
-                        l.Add(new KeyValuePair<string, string>(attribute.ParameterName, property.GetValue(model).ToString()));
+                    if (property.GetCustomAttribute(typeof(ParameterNameAttribute)) is ParameterNameAttribute paramName)
+                        l.Add(new KeyValuePair<string, string>(paramName.ParameterName, property.GetValue(model).ToString()));
+                    else if (property.GetCustomAttribute(typeof(ObjectListParameterAttribute)) is ObjectListParameterAttribute objList)
+                    {
+                        int paramId = 1;
+                        var @params = property.GetValue(model) as List<object>;
+                        foreach (var p in @params)
+                        {
+                            var names = GetAttributes(p);
+                            foreach (var name in names)
+                                l.Add(new KeyValuePair<string, string>(name.Key.Replace("#", paramId.ToString()), name.Value));
+                            paramId++;
+                        }
+                    }
+                    else if (property.GetCustomAttribute(typeof(StringListParameterAttribute)) is StringListParameterAttribute strList)
+                    {
+                        int paramId = 1;
+                        var @params = property.GetValue(model) as List<string>;
+                        foreach (var p in @params)
+                        {
+                            l.Add(new KeyValuePair<string, string>(strList.ParameterName.Replace("#", paramId.ToString()), p));
+                            paramId++;
+                        }
+                    }
                     else
                         l.Add(new KeyValuePair<string, string>(property.Name.ToLower(), property.GetValue(model).ToString()));
                 }
