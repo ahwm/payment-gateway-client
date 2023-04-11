@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -21,7 +22,7 @@ namespace PaymentGateway.Helpers
                     else if (property.GetCustomAttribute(typeof(ObjectListParameterAttribute)) is ObjectListParameterAttribute objList)
                     {
                         int paramId = 1;
-                        var @params = property.GetValue(model) as List<object>;
+                        var @params = property.GetValue(model, null) as IList;
                         foreach (var p in @params)
                         {
                             var names = GetAttributes(p);
