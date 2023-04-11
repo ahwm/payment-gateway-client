@@ -18,9 +18,3 @@ for:
      - main
  
  configuration: Release
-  
- deploy:
-   provider: NuGet
-   artifact: /.nupkg/
-   api_key:
-     secure: VNM5wnGi0PuiIXenGuDxuF+KvS30kSDa97hCQHkEE2DZ2s8bJC40DPJol7kEUQaS
