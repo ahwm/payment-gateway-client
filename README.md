@@ -114,6 +114,8 @@ public class GatewayResponse {
 
 ```csharp
 ctx = HttpContext.Current;
+string key = "WEBHOOK VALIDATION KEY";
+string signature = ctx.Request.Headers["webhook-Signature"];
 string reqBody = "";
 try
 {
@@ -122,10 +124,11 @@ try
 }
 catch { }
 WriteLog($"------{DateTime.UtcNow:R}---------------");
-WriteLog(ctx.Request.Headers["webhook-Signature"]);
+WriteLog(signature);
 WriteLog(reqBody);
 
-var status = WebhookValidator.VerifyWebhook(reqBody, "WEBHOOK VALIDATION KEY HERE", ctx.Request.Headers["webhook-Signature"]);
+
+var status = WebhookValidator.VerifyWebhook(reqBody, key, signature);
 if (!status)
 {
     WriteLog($"------{DateTime.UtcNow:R}---------------");
