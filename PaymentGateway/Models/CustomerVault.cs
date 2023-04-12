@@ -284,33 +284,13 @@ namespace PaymentGateway.Models
     /// <summary>
     /// 
     /// </summary>
-    public class CustomerSale
+    public class CustomerSale : Sale
     {
-        [ParameterName("type")]
-        internal static string Type => "sale";
-
         /// <summary>
         /// 
         /// </summary>
         [ParameterName("customer_vault_id")]
         public string CustomerVaultId { get; set; }
-
-        /// <summary>
-        /// <para>Total amount to be charged. For validate, the amount must be omitted or set to 0.00.</para>
-        /// <para>Format: x.xx</para>
-        /// </summary>
-        public string Amount { get; set; }
-
-        /// <summary>
-        /// The transaction currency. Format: ISO 4217
-        /// </summary>
-        public string Currency { get; set; }
-
-        /// <summary>
-        /// If using Multiple MIDs, route to this processor (processor_id is obtained under Settings->Transaction Routing in the Control Panel).
-        /// </summary>
-        [ParameterName("processor_id")]
-        public string ProcessorId { get; set; }
 
         /// <summary>
         /// 

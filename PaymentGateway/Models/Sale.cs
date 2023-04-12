@@ -1,4 +1,5 @@
 ﻿using PaymentGateway.Attributes;
+using System.Collections.Generic;
 
 namespace PaymentGateway.Models
 {
@@ -140,6 +141,18 @@ namespace PaymentGateway.Models
         /// </summary>
         [ParameterName("test_mode")]
         public string TestMode { get; set; } = "";
+
+        /// <summary>
+        /// Can be set up in merchant control panel under 'Settings'->'Merchant Defined Fields'.
+        /// </summary>
+        [StringListParameter("merchant_defined_field_#")]
+        public List<string> MerchantDefinedFields { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [ObjectListParameter]
+        public List<InvoiceProduct> Products { get; set; }
     }
 
     /// <summary>
