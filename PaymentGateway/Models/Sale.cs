@@ -1,4 +1,5 @@
 ﻿using PaymentGateway.Attributes;
+using System.Collections.Generic;
 
 namespace PaymentGateway.Models
 {
@@ -136,10 +137,27 @@ namespace PaymentGateway.Models
         public string ProcessorId { get; set; }
 
         /// <summary>
-        /// Set to "enabled" <em>and</em> use the test account information in the provider's documentation to test a one-off transaction. 
+        /// Set to "enabled" <em>and</em> use the test credit card account information in the provider's documentation to test a one-off transaction. 
         /// </summary>
         [ParameterName("test_mode")]
         public string TestMode { get; set; } = "";
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string IPAddress { get; set; }
+
+        /// <summary>
+        /// Can be set up in merchant control panel under 'Settings'->'Merchant Defined Fields'.
+        /// </summary>
+        [StringListParameter("merchant_defined_field_#")]
+        public List<string> MerchantDefinedFields { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [ObjectListParameter]
+        public List<InvoiceProduct> Products { get; set; }
     }
 
     /// <summary>
