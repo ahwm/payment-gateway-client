@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
+﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace PaymentGateway.Models
 {
@@ -329,49 +324,248 @@ namespace PaymentGateway.Models
     /// </summary>
     public class Event
     {
-        public Merchant merchant { get; set; }
-        public Features features { get; set; }
-        public string transaction_id { get; set; }
-        public string transaction_type { get; set; }
-        public string condition { get; set; }
-        public string processor_id { get; set; }
-        public string ponumber { get; set; }
-        public string order_description { get; set; }
-        public string order_id { get; set; }
-        public string customerid { get; set; }
-        public string customertaxid { get; set; }
-        public string website { get; set; }
-        public string shipping { get; set; }
-        public string currency { get; set; }
-        public string tax { get; set; }
-        public string surcharge { get; set; }
-        public string cash_discount { get; set; }
-        public string tip { get; set; }
-        public string requested_amount { get; set; }
-        public string shipping_carrier { get; set; }
-        public string tracking_number { get; set; }
-        public string shipping_date { get; set; }
-        public string partial_payment_id { get; set; }
-        public string partial_payment_balance { get; set; }
-        public string platform_id { get; set; }
-        public string authorization_code { get; set; }
-        public string social_security_number { get; set; }
-        public string drivers_license_number { get; set; }
-        public string drivers_license_state { get; set; }
-        public string drivers_license_dob { get; set; }
-        public string duty_amount { get; set; }
-        public string discount_amount { get; set; }
-        public string national_tax_amount { get; set; }
-        public string summary_commodity_code { get; set; }
-        public string alternate_tax_amount { get; set; }
-        public string vat_tax_amount { get; set; }
-        public string vat_tax_rate { get; set; }
-        public Address billing_address { get; set; }
-        public Address shipping_address { get; set; }
-        public Check check { get; set; }
-        public Card card { get; set; }
-        public Dictionary<string, object> merchant_defined_fields { get; set; }
-        public Action action { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public Merchant Merchant { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Features Features { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("transaction_id")]
+        public string TransactionId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("transaction_type")]
+        public string TransactionType { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Condition { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("processor_id")]
+        public string ProcessorId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PONumber { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("order_description")]
+        public string OrderDescription { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("order_id")]
+        public string OrderId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string CustomerId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string CustomerTaxId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Website { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Shipping { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Currency { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Tax { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Surcharge { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("sec_code")]
+        public string CashDiscount { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Tip { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("requested_amount")]
+        public string RequestedAmount { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("shipping_carrier")]
+        public string ShippingCarrier { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("tracking_number")]
+        public string TrackingNumber { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("shipping_date")]
+        public string ShippingDate { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("partial_payment_id")]
+        public string PartialPaymentId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("partial_payment_balance")]
+        public string PartialPaymentBalance { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("platform_id")]
+        public string PlatformId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("authorization_code")]
+        public string AuthorizationCode { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("social_security_number")]
+        public string SocialSecurityNumber { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("drivers_license_number")]
+        public string DriversLicenseNumber { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("drivers_license_state")]
+        public string DriversLicenseState { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("drivers_license_dob")]
+        public string DriversLicenseDOB { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("duty_amount")]
+        public string DutyAmount { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("discount_amount")]
+        public string DiscountAmount { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("national_tax_amount")]
+        public string NationalTaxAmount { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("summary_commodity_code")]
+        public string SummaryCommodityCode { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("alternate_tax_amount")]
+        public string AlternateTaxAmount { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("vat_tax_amount")]
+        public string VatTaxAmount { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("vat_tax_rate")]
+        public string VatTaxRate { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("billing_address")]
+        public Address BillingAddress { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("shipping_address")]
+        public Address ShippingAddress { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Check Check { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Card Card { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("merchant_defined_fields")]
+        public Dictionary<string, object> MerchantDefinedFields { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Action Action { get; set; }
     }
 
     /// <summary>
@@ -379,7 +573,11 @@ namespace PaymentGateway.Models
     /// </summary>
     public class Features
     {
-        public bool is_test_mode { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("is_test_mode")]
+        public bool IsTestMode { get; set; }
     }
 
     /// <summary>
@@ -387,8 +585,39 @@ namespace PaymentGateway.Models
     /// </summary>
     public class Merchant
     {
-        public string id { get; set; }
-        public string name { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Id { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Name { get; set; }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class WebhookData
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("event_id")]
+        public string EventId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("event_type")]
+        public string EventType { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("event_body")]
+        public Event EventBody { get; set; }
     }
 
     /// <summary>
@@ -396,8 +625,14 @@ namespace PaymentGateway.Models
     /// </summary>
     public class WebhookResponse
     {
-        public string event_id { get; set; }
-        public string event_type { get; set; }
-        public Event event_body { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public WebhookData Data;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool IsValid;
     }
 }

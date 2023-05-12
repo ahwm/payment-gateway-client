@@ -1,13 +1,15 @@
-﻿using System;
+﻿using PaymentGateway.Models;
+using System;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json;
 
 namespace PaymentGateway
 {
     /// <summary>
     /// Methods to validate webhook events
     /// </summary>
-    public static class WebhookValidator
+    public static class WebhookParser
     {
         /// <summary>
         /// Verify the webhook signature
@@ -17,7 +19,7 @@ namespace PaymentGateway
         /// <param name="webhookSignature">Contents of "webhook-Signature" header</param>
         /// <returns></returns>
         /// <exception cref="GatewayException">If "webhook-Signature" header is missing nonce (t= paramenter) or signature (s= parameter)</exception>
-        static public bool VerifyWebhook(string body, string signingKey, string webhookSignature)
+        static public WebhookResponse ParseWebhookData(string body, string signingKey, string webhookSignature)
         {
             string[] sig = webhookSignature.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
             if (!sig[0].StartsWith("t="))
@@ -26,7 +28,11 @@ namespace PaymentGateway
                 throw new GatewayException("Webhook Error: Missing signature");
             string nonce = sig[0].Substring(2), signature = sig[1].Substring(2);
             HMACSHA256 hmac = new HMACSHA256(Encoding.UTF8.GetBytes(signingKey));
-            return signature == ByteToString(hmac.ComputeHash(Encoding.UTF8.GetBytes(nonce + "." + body)));
+            return new WebhookResponse
+            {
+                Data = (WebhookData)JsonSerializer.Deserialize(body, typeof(WebhookData)),
+                IsValid = signature == ByteToString(hmac.ComputeHash(Encoding.UTF8.GetBytes(nonce + "." + body)))
+            };
         }
 
         static string ByteToString(byte[] buff)

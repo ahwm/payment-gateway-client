@@ -114,7 +114,8 @@ public class GatewayResponse {
 
 ```csharp
 ctx = HttpContext.Current;
-string key = "WEBHOOK VALIDATION KEY";
+// generate/retrieve signing key from gateway portal
+string key = "WEBHOOK SIGNING KEY";
 string signature = ctx.Request.Headers["webhook-Signature"];
 string reqBody = "";
 try
@@ -128,12 +129,12 @@ WriteLog(signature);
 WriteLog(reqBody);
 
 
-var status = WebhookValidator.VerifyWebhook(reqBody, key, signature);
-if (!status)
+var status = WebhookParser.ParseWebhookData(reqBody, key, signature);
+if (!status.IsValid)
 {
     WriteLog($"------{DateTime.UtcNow:R}---------------");
     WriteLog("Webhook validation failed!");
     return;
 }
-var body = JsonConvert.DeserializeObject<JArray>(reqBody);
+// process status.Data
 ```
