@@ -112,6 +112,8 @@ public class GatewayResponse {
 
 ### Web hook Validation
 
+#### .NET Framework
+
 ```csharp
 ctx = HttpContext.Current;
 // generate/retrieve signing key from gateway portal
@@ -128,6 +130,32 @@ WriteLog($"------{DateTime.UtcNow:R}---------------");
 WriteLog(signature);
 WriteLog(reqBody);
 
+var status = WebhookParser.ParseWebhookData(reqBody, key, signature);
+if (!status.IsValid)
+{
+    WriteLog($"------{DateTime.UtcNow:R}---------------");
+    WriteLog("Webhook validation failed!");
+    return;
+}
+// process status.Data
+```
+
+#### .NET Core / .NET 5+
+
+```csharp
+// generate/retrieve signing key from gateway portal
+string key = "WEBHOOK SIGNING KEY";
+string signature = Request.Headers["webhook-Signature"];
+string reqBody = "";
+try
+{
+    using (StreamReader sr = new StreamReader(Request.Body))
+        reqBody = await sr.ReadToEndAsync();
+}
+catch { }
+WriteLog($"------{DateTime.UtcNow:R}---------------");
+WriteLog(signature);
+WriteLog(reqBody);
 
 var status = WebhookParser.ParseWebhookData(reqBody, key, signature);
 if (!status.IsValid)
