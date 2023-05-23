@@ -120,6 +120,11 @@ namespace PaymentGateway
         /// PayKings. See <a href="https://paykings.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://paykings.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
         /// </summary>
         public static GatewayProvider PayKings { get; } = new GatewayProvider("https://paykings.transactiongateway.com/api");
+        
+        /// <summary>
+        /// PayDough.Me. See <a href="https://paydoughme.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://paydoughme.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+        /// </summary>
+        public static GatewayProvider PayDoughMe { get; } = new GatewayProvider("https://paydoughme.transactiongateway.com/api");
 
         /// <summary>
         /// Payscape. See <a href="https://secure.payscapegateway.com/merchants/resources/integration/integration_portal.php">https://secure.payscapegateway.com/merchants/resources/integration/integration_portal.php</a>
@@ -160,6 +165,11 @@ namespace PaymentGateway
         /// TranzCrypt. See <a href="https://secure.tranzcrypt.com/merchants/resources/integration/integration_portal.php">https://secure.tranzcrypt.com/merchants/resources/integration/integration_portal.php</a>
         /// </summary>
         public static GatewayProvider TranzCrypt { get; } = new GatewayProvider("https://secure.tranzcrypt.com/api");
+        
+        /// <summary>
+        /// UMS Banking Gateway. See <a href="https://umsbanking.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://umsbanking.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+        /// </summary>
+        public static GatewayProvider UMSBanking { get; } = new GatewayProvider("https://umsbanking.transactiongateway.com/api");
 
         /// <summary>
         /// Valued Merchant Services. See <a href="https://https://secure.valuedmerchantgateway.com/merchants/resources/integration/integration_portal.php">https://secure.valuedmerchantgateway.com/merchants/resources/integration/integration_portal.php</a>
