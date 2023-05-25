@@ -6,13 +6,13 @@
 		<Authors>Adam Humpherys</Authors>
 		<Company />
 		<Product>Payment Gateway Client</Product>
-		<Copyright>(c) 2021 Adam Humpherys</Copyright>
+		<Copyright>(c) 2023 Adam Humpherys</Copyright>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/ahwm/payment-gateway-client</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/ahwm/payment-gateway-client</RepositoryUrl>
-		<Version>0.0.3</Version>
+		<Version>0.0.4</Version>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
-		<PackageReleaseNotes>Customer Vault</PackageReleaseNotes>
+		<PackageReleaseNotes>Webhook parsing</PackageReleaseNotes>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Description>Client for interacting with Transaction Gateway endpoints for multiple providers compatible with Network Merchants (NMI)</Description>
 		<PackageTags>nmi bottomline payment gateway processor api mastercard amex visa canyonpay cyogate epna 0merchant easypaydirect vizypay durango</PackageTags>
