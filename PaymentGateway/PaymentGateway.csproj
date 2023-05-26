@@ -10,7 +10,7 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/ahwm/payment-gateway-client</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/ahwm/payment-gateway-client</RepositoryUrl>
-		<Version>0.0.4</Version>
+		<Version>0.0.4.1</Version>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
 		<PackageReleaseNotes>Webhook parsing</PackageReleaseNotes>
 		<PackageReadmeFile>README.md</PackageReadmeFile>

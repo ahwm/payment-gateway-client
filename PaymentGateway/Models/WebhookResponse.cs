@@ -11,6 +11,7 @@ namespace PaymentGateway.Models
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("amount")]
         public string Amount { get; set; }
 
         /// <summary>
@@ -22,11 +23,13 @@ namespace PaymentGateway.Models
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("date")]
         public string Date { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("success")]
         public string Success { get; set; }
 
         /// <summary>
@@ -38,6 +41,7 @@ namespace PaymentGateway.Models
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("source")]
         public string Source { get; set; }
 
         /// <summary>
@@ -49,6 +53,7 @@ namespace PaymentGateway.Models
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("username")]
         public string Username { get; set; }
 
         /// <summary>
@@ -126,16 +131,19 @@ namespace PaymentGateway.Models
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("company")]
         public string Company { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("city")]
         public string City { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("state")]
         public string State { get; set; }
 
         /// <summary>
@@ -153,11 +161,13 @@ namespace PaymentGateway.Models
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("email")]
         public string Email { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("phone")]
         public string Phone { get; set; }
 
         /// <summary>
@@ -169,6 +179,7 @@ namespace PaymentGateway.Models
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("fax")]
         public string Fax { get; set; }
     }
 
@@ -188,10 +199,11 @@ namespace PaymentGateway.Models
         /// </summary>
         [JsonPropertyName("cc_exp")]
         public string CCExp { get; set; }
-        
+
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("cavv")]
         public string CAVV { get; set; }
 
         /// <summary>
@@ -203,11 +215,13 @@ namespace PaymentGateway.Models
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("xid")]
         public string XID { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("eci")]
         public string ECI { get; set; }
 
         /// <summary>
@@ -327,11 +341,13 @@ namespace PaymentGateway.Models
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("merchant")]
         public Merchant Merchant { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("features")]
         public Features Features { get; set; }
 
         /// <summary>
@@ -349,6 +365,7 @@ namespace PaymentGateway.Models
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("condition")]
         public string Condition { get; set; }
 
         /// <summary>
@@ -360,6 +377,7 @@ namespace PaymentGateway.Models
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("ponumber")]
         public string PONumber { get; set; }
 
         /// <summary>
@@ -377,36 +395,43 @@ namespace PaymentGateway.Models
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("customerid")]
         public string CustomerId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("customertaxid")]
         public string CustomerTaxId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("website")]
         public string Website { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("shipping")]
         public string Shipping { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("currency")]
         public string Currency { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("tax")]
         public string Tax { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("surcharge")]
         public string Surcharge { get; set; }
 
         /// <summary>
@@ -418,6 +443,7 @@ namespace PaymentGateway.Models
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("tip")]
         public string Tip { get; set; }
 
         /// <summary>
@@ -549,11 +575,13 @@ namespace PaymentGateway.Models
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("check")]
         public Check Check { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("card")]
         public Card Card { get; set; }
 
         /// <summary>
@@ -565,6 +593,7 @@ namespace PaymentGateway.Models
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("action")]
         public Action Action { get; set; }
     }
 
@@ -588,11 +617,13 @@ namespace PaymentGateway.Models
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("id")]
         public string Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     }
 
