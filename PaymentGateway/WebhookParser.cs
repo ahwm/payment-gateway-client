@@ -30,7 +30,7 @@ namespace PaymentGateway
             HMACSHA256 hmac = new HMACSHA256(Encoding.UTF8.GetBytes(signingKey));
             return new WebhookResponse
             {
-                Data = (WebhookData)JsonSerializer.Deserialize(body, typeof(WebhookData)),
+                Data = (WebhookData)JsonSerializer.Deserialize(body, typeof(WebhookData), new JsonSerializerOptions { IncludeFields = true }),
                 IsValid = signature == ByteToString(hmac.ComputeHash(Encoding.UTF8.GetBytes(nonce + "." + body)))
             };
         }
