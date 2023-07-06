@@ -31,7 +31,8 @@ namespace PaymentGateway
             return new WebhookResponse
             {
                 Data = (WebhookData)JsonSerializer.Deserialize(body, typeof(WebhookData), new JsonSerializerOptions { IncludeFields = true }),
-                IsValid = signature == ByteToString(hmac.ComputeHash(Encoding.UTF8.GetBytes(nonce + "." + body)))
+                IsValid = signature == ByteToString(hmac.ComputeHash(Encoding.UTF8.GetBytes(nonce + "." + body))),
+                Nonce = nonce
             };
         }
 
