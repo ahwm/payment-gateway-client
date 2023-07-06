@@ -665,5 +665,10 @@ namespace PaymentGateway.Models
         /// 
         /// </summary>
         public bool IsValid;
+
+        /// <summary>
+        /// Single-use nonce. The application should validate one-time use to prevent replay attacks.
+        /// </summary>
+        public string Nonce { get; set; }
     }
 }
