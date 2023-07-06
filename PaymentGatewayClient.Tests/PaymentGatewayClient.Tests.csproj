@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFrameworks>netcoreapp3.1;net6.0;net472</TargetFrameworks>
     <IsPackable>false</IsPackable>
+    <!-- System.Text.Json specifically targets netstandard2.0 so netcoreapp3.1 should work fine in tests -->
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
   </PropertyGroup>
 
   <ItemGroup>
