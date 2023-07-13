@@ -1,4 +1,5 @@
 ﻿using PaymentGateway.Attributes;
+using System.Collections.Generic;
 
 namespace PaymentGateway.Models
 {
@@ -297,6 +298,20 @@ namespace PaymentGateway.Models
         /// </summary>
         [ParameterName("source_transaction_id")]
         public string SourceTransactionId { get; set; }
+
+        /// <summary>
+        /// Can be set up in merchant control panel under 'Settings'->'Merchant Defined Fields'.
+        /// </summary>
+        [StringListParameter("merchant_defined_field_#")]
+        public List<string> MerchantDefinedFields { get; set; }
+
+        /// <summary>
+        /// <para>If set to true, credit card will be evaluated and sent based upon Automatic Card Updater settings. If set to false, credit card will not be submitted for updates when Automatic Card Updater runs.</para>
+        /// <para>Default: 'true'</para>
+        /// <para>Values: 'true' or 'false'</para>
+        /// </summary>
+        [ParameterName("acu_enabled")]
+        public string ACUEnabled { get; set; }
     }
 
     /// <summary>
