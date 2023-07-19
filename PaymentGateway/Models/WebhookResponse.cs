@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace PaymentGateway.Models
@@ -642,7 +643,7 @@ namespace PaymentGateway.Models
         /// 
         /// </summary>
         [JsonPropertyName("event_type")]
-        public string EventType { get; set; }
+        public WebhookResponseEventType EventType { get; set; }
 
         /// <summary>
         /// 
@@ -670,5 +671,63 @@ namespace PaymentGateway.Models
         /// Single-use nonce. The application should validate one-time use to prevent replay attacks.
         /// </summary>
         public string Nonce { get; set; }
+    }
+
+    public class WebhookResponseEventType
+    {
+        public static WebhookResponseEventType ChargebackBatchComplete => new WebhookResponseEventType("chargeback.batch.complete");
+        public static WebhookResponseEventType RecurringPlanAdd => new WebhookResponseEventType("recurring.plan.add");
+        public static WebhookResponseEventType RecurringPlanUpdate => new WebhookResponseEventType("recurring.plan.update");
+        public static WebhookResponseEventType RecurringPlanDelete => new WebhookResponseEventType("recurring.plan.delete");
+        public static WebhookResponseEventType RecurringSubscriptionAdd => new WebhookResponseEventType("recurring.subscription.add");
+        public static WebhookResponseEventType RecurringSubscriptionUpdate => new WebhookResponseEventType("recurring.subscription.update");
+        public static WebhookResponseEventType RecurringSubscriptionDelete => new WebhookResponseEventType("recurring.subscription.delete");
+        public static WebhookResponseEventType SettlementBatchComplete => new WebhookResponseEventType("settlement.batch.complete");
+        public static WebhookResponseEventType SettlementBatchFailure => new WebhookResponseEventType("settlement.batch.failure");
+        public static WebhookResponseEventType TransactionSaleUnknown => new WebhookResponseEventType("transaction.sale.unknown");
+        public static WebhookResponseEventType TransactionSaleSuccess => new WebhookResponseEventType("transaction.sale.success");
+        public static WebhookResponseEventType TransactionSaleFailure => new WebhookResponseEventType("transaction.sale.failure");
+        public static WebhookResponseEventType TransactionAuthSuccess => new WebhookResponseEventType("transaction.auth.success");
+        public static WebhookResponseEventType TransactionAuthFailure => new WebhookResponseEventType("transaction.auth.failure");
+        public static WebhookResponseEventType TransactionAuthUnknown => new WebhookResponseEventType("transaction.auth.unknown");
+        public static WebhookResponseEventType TransactionCaptureSuccess => new WebhookResponseEventType("transaction.capture.success");
+        public static WebhookResponseEventType TransactionCaptureFailure => new WebhookResponseEventType("transaction.capture.failure");
+        public static WebhookResponseEventType TransactionCaptureUnknown => new WebhookResponseEventType("transaction.capture.unknown");
+        public static WebhookResponseEventType TransactionVoidSuccess => new WebhookResponseEventType("transaction.void.success");
+        public static WebhookResponseEventType TransactionVoidFailure => new WebhookResponseEventType("transaction.void.failure");
+        public static WebhookResponseEventType TransactionVoidUnknown => new WebhookResponseEventType("transaction.void.unknown");
+        public static WebhookResponseEventType TransactionRefundSuccess => new WebhookResponseEventType("transaction.refund.success");
+        public static WebhookResponseEventType TransactionRefundFailure => new WebhookResponseEventType("transaction.refund.failure");
+        public static WebhookResponseEventType TransactionRefundUnknown => new WebhookResponseEventType("transaction.refund.unknown");
+        public static WebhookResponseEventType TransactionCreditSuccess => new WebhookResponseEventType("transaction.credit.success");
+        public static WebhookResponseEventType TransactionCreditFailure => new WebhookResponseEventType("transaction.credit.failure");
+        public static WebhookResponseEventType TransactionCreditUnknown => new WebhookResponseEventType("transaction.credit.unknown");
+        public static WebhookResponseEventType TransactionValidateSuccess => new WebhookResponseEventType("transaction.validate.success");
+        public static WebhookResponseEventType TransactionValidateFailure => new WebhookResponseEventType("transaction.validate.failure");
+        public static WebhookResponseEventType TransactionValidateUnknown => new WebhookResponseEventType("transaction.validate.unknown");
+        public static WebhookResponseEventType ACUSummaryAutomaticallyUpdated => new WebhookResponseEventType("acu.summary.automaticallyupdated");
+        public static WebhookResponseEventType ACUSummaryContactCustomer => new WebhookResponseEventType("acu.summary.contactcustomer");
+        public static WebhookResponseEventType ACUSummaryClosedAccount => new WebhookResponseEventType("acu.summary.closedaccount");
+
+        private readonly string EventType;
+
+        public WebhookResponseEventType(string eventType)
+        {
+            EventType = eventType;
+        }
+
+        public override string ToString() => EventType;
+
+        public static implicit operator string(WebhookResponseEventType t) => t.EventType;
+        public static implicit operator WebhookResponseEventType(string t) => new WebhookResponseEventType(t);
+    }
+
+    public class WebhookResponseEventTypeJsonConverter : JsonConverter<WebhookResponseEventType>
+    {
+        public override WebhookResponseEventType Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) => 
+            new WebhookResponseEventType(reader.GetString());
+
+        public overrice void Write(Utf8JsonWriter writer, WebhookResponseEventType eventType, JsonSerializerOptions options) =>
+            writer.WriteStringValue(eventType.ToString());
     }
 }
