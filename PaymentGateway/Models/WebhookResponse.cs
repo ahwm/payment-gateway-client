@@ -355,6 +355,48 @@ namespace PaymentGateway.Models
         /// <summary>
         /// 
         /// </summary>
+        [JsonPropertyName("subscription_id")]
+        public string SubscriptionId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("subscription_type")]
+        public string SubscriptionType { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("next_charge_date")]
+        public string NextChargeDate { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("completed_payments")]
+        public string CompletedPayments { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("attempted_payments")]
+        public string AttemptedPayments { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("remaining_payments")]
+        public string RemainingPayments { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("plan")]
+        public Plan Plan { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [JsonPropertyName("transaction_id")]
         public string TransactionId { get; set; }
 
@@ -602,6 +644,54 @@ namespace PaymentGateway.Models
     /// <summary>
     /// 
     /// </summary>
+    public class Plan
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("amount")]
+        public string Amount { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("day_frequency")]
+        public string DayFrequency { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("payments")]
+        public string Payments { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("month_frequency")]
+        public string MonthFrequency { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("day_of_month")]
+        public string DayOfMonth { get; set; }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
     public class Features
     {
         /// <summary>
@@ -651,6 +741,12 @@ namespace PaymentGateway.Models
         /// </summary>
         [JsonPropertyName("event_body")]
         public Event EventBody { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonPropertyName("event_body")]
+        public Dictionary<string, object> EventBodyRaw { get; set; }
     }
 
     /// <summary>
