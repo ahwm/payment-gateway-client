@@ -63,7 +63,7 @@ namespace PaymentGateway
         public GatewayClient(string securityKey, string postUrl) : this(securityKey, new GatewayProvider(postUrl))
         { }
 
-        private Dictionary<string, string> MakeRequest(object model)
+        private async Task<Dictionary<string, string>> MakeRequest(object model)
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
@@ -84,15 +84,57 @@ namespace PaymentGateway
                 using (HttpClient client = new HttpClient())
                 {
                     using (var postContent = new FormUrlEncodedContent(Values))
-                    using (HttpResponseMessage response = client.PostAsync(Provider.PostUrl + "/transact.php", postContent).Result)
+                    using (HttpResponseMessage response = await client.PostAsync(Provider.PostUrl + "/transact.php", postContent).ConfigureAwait(false))
                     {
                         response.EnsureSuccessStatusCode();
                         using (HttpContent content = response.Content)
                         {
-                            string result = content.ReadAsStringAsync().Result;
+                            string result = await content.ReadAsStringAsync();
                             var values = HttpUtility.ParseQueryString(result);
                             foreach (var key in values.AllKeys)
                                 resp.Add(key, values[key]);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new GatewayException($"Unable to communicate with gateway ({Provider.PostUrl}). Ensure {nameof(Provider.PostUrl)} has a correct value and the security key is correct. See inner exception for details.", ex);
+            }
+
+            RequestCompleted?.Invoke(this, new GatewayEventArgs(resp));
+
+            return resp;
+        }
+
+        private async Task<QueryResponse> MakeQueryRequest(object model)
+        {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
+            Dictionary<string, string> Values = new Dictionary<string, string>
+            {
+                { "security_key", SecurityKey }
+            };
+
+            var attributes = AttributeHelper.GetAttributes(model);
+            foreach (var kv in attributes)
+                Values.Add(kv.Key, kv.Value);
+
+            RequestStarted?.Invoke(this, new GatewayEventArgs(Values));
+
+            Dictionary<string, string> resp = new Dictionary<string, string>();
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    using (var postContent = new FormUrlEncodedContent(Values))
+                    using (HttpResponseMessage response = await client.PostAsync(Provider.PostUrl + "/query.php", postContent))
+                    {
+                        response.EnsureSuccessStatusCode();
+                        using (HttpContent content = response.Content)
+                        {
+                            string result = await content.ReadAsStringAsync();
+                            
                         }
                     }
                 }
