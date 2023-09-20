@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 using System.Web;
+using System.Xml.Serialization;
 using PaymentGateway.Helpers;
 using PaymentGateway.Models;
+using PaymentGateway.Query.Models;
 
 namespace PaymentGateway
 {
@@ -122,7 +127,7 @@ namespace PaymentGateway
 
             RequestStarted?.Invoke(this, new GatewayEventArgs(Values));
 
-            Dictionary<string, string> resp = new Dictionary<string, string>();
+            var resp = new QueryResponse();
             try
             {
                 using (HttpClient client = new HttpClient())
@@ -134,7 +139,7 @@ namespace PaymentGateway
                         using (HttpContent content = response.Content)
                         {
                             string result = await content.ReadAsStringAsync();
-                            
+                            resp = (QueryResponse)new XmlSerializer(typeof(QueryResponse)).Deserialize(new MemoryStream(Encoding.UTF8.GetBytes(result)));
                         }
                     }
                 }
@@ -144,7 +149,7 @@ namespace PaymentGateway
                 throw new GatewayException($"Unable to communicate with gateway ({Provider.PostUrl}). Ensure {nameof(Provider.PostUrl)} has a correct value and the security key is correct. See inner exception for details.", ex);
             }
 
-            RequestCompleted?.Invoke(this, new GatewayEventArgs(resp));
+            //RequestCompleted?.Invoke(this, new GatewayEventArgs(resp));
 
             return resp;
         }

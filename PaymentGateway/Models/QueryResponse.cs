@@ -645,7 +645,7 @@ namespace PaymentGateway.Query.Models
     /// 
     /// </summary>
     [XmlRoot(ElementName = "nm_response")]
-    public class NmResponse
+    public class QueryResponse
     {
         /// <summary>
         /// 
@@ -653,6 +653,9 @@ namespace PaymentGateway.Query.Models
         [XmlElement(ElementName = "transaction")]
         public List<Transaction> Transaction { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="subscription")] 
 	    public List<Subscription> Subscription { get; set; } 
     }
