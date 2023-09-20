@@ -1,4 +1,6 @@
 ﻿using PaymentGateway.Models;
+using System.Threading.Tasks;
+
 namespace PaymentGateway
 {
     public partial class GatewayClient
@@ -8,9 +10,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse CreateInvoice(CreateInvoice request)
+        public async Task<GatewayResponse> CreateInvoiceAsync(CreateInvoice request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request));
 
             return data;
         }
@@ -20,9 +22,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse UpdateInvoice(UpdateInvoice request)
+        public async Task<GatewayResponse> UpdateInvoiceAsync(UpdateInvoice request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request));
 
             return data;
         }
@@ -32,9 +34,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse SendInvoice(SendInvoice request)
+        public async Task<GatewayResponse> SendInvoiceAsync(SendInvoice request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request));
 
             return data;
         }
@@ -44,9 +46,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse CloseInvoice(CloseInvoice request)
+        public async Task<GatewayResponse> CloseInvoiceAsync(CloseInvoice request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request));
 
             return data;
         }

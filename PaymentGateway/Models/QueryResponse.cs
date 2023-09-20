@@ -660,146 +660,287 @@ namespace PaymentGateway.Query.Models
 	    public List<Subscription> Subscription { get; set; } 
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     [XmlRoot(ElementName="plan")]
     public class Plan { 
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="plan_id")] 
-        public int PlanId { get; set; } 
+        public int PlanId { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="plan_name")] 
-        public object PlanName { get; set; } 
+        public object PlanName { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="plan_amount")] 
-        public double PlanAmount { get; set; } 
+        public double PlanAmount { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="plan_payments")] 
-        public string PlanPayments { get; set; } 
+        public string PlanPayments { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="month_frequency")] 
-        public int MonthFrequency { get; set; } 
+        public int MonthFrequency { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="day_of_month")] 
         public int DayOfMonth { get; set; } 
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     [XmlRoot(ElementName="merchant_defined_field")]
-    public class MerchantDefinedField { 
+    public class MerchantDefinedField {
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlAttribute(AttributeName="id")] 
-        public int Id { get; set; } 
+        public int Id { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlText] 
         public string Text { get; set; } 
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     [XmlRoot(ElementName="subscription")]
-    public class Subscription { 
+    public class Subscription {
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="subscription_id")] 
-        public double SubscriptionId { get; set; } 
+        public double SubscriptionId { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="plan")] 
-        public Plan Plan { get; set; } 
+        public Plan Plan { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="next_charge_date")] 
-        public DateTime NextChargeDate { get; set; } 
+        public DateTime NextChargeDate { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="completed_payments")] 
-        public int CompletedPayments { get; set; } 
+        public int CompletedPayments { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="attempted_payments")] 
-        public int AttemptedPayments { get; set; } 
+        public int AttemptedPayments { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="remaining_payments")] 
-        public string RemainingPayments { get; set; } 
+        public string RemainingPayments { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="ponumber")] 
-        public object Ponumber { get; set; } 
+        public object Ponumber { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="orderid")] 
-        public object Orderid { get; set; } 
+        public object Orderid { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="order_description")] 
-        public object OrderDescription { get; set; } 
+        public object OrderDescription { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="shipping")] 
-        public double Shipping { get; set; } 
+        public double Shipping { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="tax")] 
-        public double Tax { get; set; } 
+        public double Tax { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="first_name")] 
-        public string FirstName { get; set; } 
+        public string FirstName { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="last_name")] 
-        public string LastName { get; set; } 
+        public string LastName { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="address_1")] 
-        public string Address1 { get; set; } 
+        public string Address1 { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="address_2")] 
-        public object Address2 { get; set; } 
+        public object Address2 { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="company")] 
-        public object Company { get; set; } 
+        public object Company { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="city")] 
-        public string City { get; set; } 
+        public string City { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="state")] 
-        public string State { get; set; } 
+        public string State { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="postal_code")] 
-        public int PostalCode { get; set; } 
+        public int PostalCode { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="country")] 
-        public object Country { get; set; } 
+        public object Country { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="email")] 
-        public string Email { get; set; } 
+        public string Email { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="phone")] 
-        public object Phone { get; set; } 
+        public object Phone { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="fax")] 
-        public object Fax { get; set; } 
+        public object Fax { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="cell_phone")] 
-        public object CellPhone { get; set; } 
+        public object CellPhone { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="customertaxid")] 
-        public object Customertaxid { get; set; } 
+        public object Customertaxid { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="website")] 
-        public object Website { get; set; } 
+        public object Website { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="cc_number")] 
-        public string CcNumber { get; set; } 
+        public string CcNumber { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="cc_hash")] 
-        public string CcHash { get; set; } 
+        public string CcHash { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="cc_exp")] 
-        public int CcExp { get; set; } 
+        public int CcExp { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="cc_start_date")] 
-        public object CcStartDate { get; set; } 
+        public object CcStartDate { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="cc_issue_number")] 
-        public object CcIssueNumber { get; set; } 
+        public object CcIssueNumber { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="cc_bin")] 
-        public int CcBin { get; set; } 
+        public int CcBin { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="processor_id")] 
-        public object ProcessorId { get; set; } 
+        public object ProcessorId { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlElement(ElementName="merchant_defined_field")] 
-        public MerchantDefinedField MerchantDefinedField { get; set; } 
+        public MerchantDefinedField MerchantDefinedField { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlAttribute(AttributeName="id")] 
-        public double Id { get; set; } 
+        public double Id { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [XmlText] 
         public string Text { get; set; } 
     }

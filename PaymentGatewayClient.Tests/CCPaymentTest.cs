@@ -1,6 +1,7 @@
 ﻿using PaymentGateway;
 using PaymentGateway.Models;
 using Shouldly;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace PaymentGatewayClient.Tests
@@ -8,7 +9,7 @@ namespace PaymentGatewayClient.Tests
     public class CCPaymentTest
     {
         [Fact]
-        public void SaleApprovalTest()
+        public async Task SaleApprovalTest()
         {
             var securityKey = "6457Thfj624V5r7WUwc5v6a68Zsd6YEm";
             var client = new GatewayClient(securityKey);
@@ -28,13 +29,13 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Approved;
-            var result = client.Sale(sale);
+            var result = await client.SaleAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }
 
         [Fact]
-        public void SaleDeclineTest()
+        public async Task SaleDeclineTest()
         {
             var securityKey = "6457Thfj624V5r7WUwc5v6a68Zsd6YEm";
             var client = new GatewayClient(securityKey);
@@ -54,13 +55,13 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Declined;
-            var result = client.Sale(sale);
+            var result = await client.SaleAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }
 
         [Fact]
-        public void AuthorizeApprovalTest()
+        public async Task AuthorizeApprovalTest()
         {
             var securityKey = "6457Thfj624V5r7WUwc5v6a68Zsd6YEm";
             var client = new GatewayClient(securityKey);
@@ -80,13 +81,13 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Approved;
-            var result = client.Authorize(sale);
+            var result = await client.AuthorizeAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }
 
         [Fact]
-        public void AuthorizeDeclineTest()
+        public async Task AuthorizeDeclineTest()
         {
             var securityKey = "6457Thfj624V5r7WUwc5v6a68Zsd6YEm";
             var client = new GatewayClient(securityKey);
@@ -106,13 +107,13 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Declined;
-            var result = client.Authorize(sale);
+            var result = await client.AuthorizeAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }
 
         [Fact]
-        public void CreditApprovalTest()
+        public async Task CreditApprovalTest()
         {
             var securityKey = "6457Thfj624V5r7WUwc5v6a68Zsd6YEm";
             var client = new GatewayClient(securityKey);
@@ -132,13 +133,13 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Approved;
-            var result = client.Credit(sale);
+            var result = await client.CreditAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }
 
         [Fact]
-        public void CreditDeclineTest()
+        public async Task CreditDeclineTest()
         {
             var securityKey = "6457Thfj624V5r7WUwc5v6a68Zsd6YEm";
             var client = new GatewayClient(securityKey);
@@ -158,13 +159,13 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Error;
-            var result = client.Credit(sale);
+            var result = await client.CreditAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }
 
         [Fact]
-        public void ValidateApprovalTest()
+        public async Task ValidateApprovalTest()
         {
             var securityKey = "6457Thfj624V5r7WUwc5v6a68Zsd6YEm";
             var client = new GatewayClient(securityKey);
@@ -184,7 +185,7 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Approved;
-            var result = client.Validate(sale);
+            var result = await client.ValidateAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }
@@ -232,7 +233,7 @@ namespace PaymentGatewayClient.Tests
         //}
 
         [Fact]
-        public void OfflineDeclineTest()
+        public async Task OfflineDeclineTest()
         {
             var securityKey = "6457Thfj624V5r7WUwc5v6a68Zsd6YEm";
             var client = new GatewayClient(securityKey);
@@ -253,7 +254,7 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Error;
-            var result = client.Offline(sale);
+            var result = await client.OfflineAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }

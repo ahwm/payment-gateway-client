@@ -1,4 +1,5 @@
 ﻿using PaymentGateway.Models;
+using System.Threading.Tasks;
 
 namespace PaymentGateway
 {
@@ -9,9 +10,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse AddPlan(AddRecurringPlan request)
+        public async Task<GatewayResponse> AddPlanAsync(AddRecurringPlan request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request));
 
             return data;
         }
@@ -22,9 +23,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse EditPlan(EditRecurringPlan request)
+        public async Task<GatewayResponse> EditPlanAsync(EditRecurringPlan request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request));
 
             return data;
         }
@@ -34,9 +35,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse AddSubscription(AddSubscription request)
+        public async Task<GatewayResponse> AddSubscriptionAsync(AddSubscription request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request));
 
             return data;
         }
@@ -46,9 +47,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse UpdateSubscription(UpdateSubscription request)
+        public async Task<GatewayResponse> UpdateSubscriptionAsync(UpdateSubscription request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request));
 
             return data;
         }
@@ -58,9 +59,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse DeleteSubscription(DeleteSubscription request)
+        public async Task<GatewayResponse> DeleteSubscriptionAsync(DeleteSubscription request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request));
 
             return data;
         }

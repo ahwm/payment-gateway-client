@@ -2,13 +2,14 @@
 using PaymentGateway;
 using Shouldly;
 using PaymentGateway.Models;
+using System.Threading.Tasks;
 
 namespace PaymentGatewayClient.Tests
 {
     public class CheckPaymentTest
     {
         [Fact]
-        public void SaleApprovalTest()
+        public async Task SaleApprovalTest()
         {
             var securityKey = "6457Thfj624V5r7WUwc5v6a68Zsd6YEm";
             var client = new GatewayClient(securityKey);
@@ -31,13 +32,13 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Approved;
-            var result = client.Sale(sale);
+            var result = await client.SaleAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }
 
         [Fact]
-        public void SaleDeclineTest()
+        public async Task SaleDeclineTest()
         {
             var securityKey = "6457Thfj624V5r7WUwc5v6a68Zsd6YEm";
             var client = new GatewayClient(securityKey);
@@ -60,7 +61,7 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Declined;
-            var result = client.Sale(sale);
+            var result = await client.SaleAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }
