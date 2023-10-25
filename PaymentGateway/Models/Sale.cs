@@ -30,6 +30,11 @@ namespace PaymentGateway.Models
         /// <summary>
         /// 
         /// </summary>
+        public string Address2 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string City { get; set; }
 
         /// <summary>
@@ -196,6 +201,11 @@ namespace PaymentGateway.Models
         public string Amount { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string OrderId { get; set; }
+
+        /// <summary>
         /// Format: x.xx
         /// </summary>
         public string Surcharge { get; set; }
@@ -246,6 +256,13 @@ namespace PaymentGateway.Models
         /// </summary>
         [ObjectListParameter]
         public List<InvoiceProduct> Products { get; set; }
+
+        /// <summary>
+        /// <para>If set to true, when the customer is charged, they will be sent a transaction receipt.</para>
+        /// <para>Values: 'true' or 'false'</para>
+        /// </summary>
+        [ParameterName("customer_receipt")]
+        public string CustomerReceipt { get; set; }
 
         /// <summary>
         /// <para>Cardholder signature image. For use with "sale" and "auth" actions only.</para>
