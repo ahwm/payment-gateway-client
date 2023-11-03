@@ -67,9 +67,14 @@ namespace PaymentGateway
         public static GatewayProvider DurangoMerchantServices { get; } = new GatewayProvider("https://secure.durango-direct.com/api");
 
         /// <summary>
-        /// Easy Pay Direct. See <a href="https://secure.easypaydirectgateway.com//merchants/resources/integration/integration_portal.php">https://secure.easypaydirectgateway.com//merchants/resources/integration/integration_portal.php</a>
+        /// Easy Pay Direct. See <a href="https://secure.easypaydirectgateway.com/merchants/resources/integration/integration_portal.php">https://secure.easypaydirectgateway.com/merchants/resources/integration/integration_portal.php</a>
         /// </summary>
         public static GatewayProvider EasyPayDirect { get; } = new GatewayProvider("https://secure.easypaydirectgateway.com/api");
+
+        /// <summary>
+        /// Empyrean Merchant Services. See <a href="https://empyrean.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://empyrean.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+        /// </summary>
+        public static GatewayProvider Empyrean { get; } = new GatewayProvider("https://empyrean.transactiongateway.com/api");
 
         /// <summary>
         /// Electronic Processing of North America (EPNA). See <a href="https://epna.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://epna.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
