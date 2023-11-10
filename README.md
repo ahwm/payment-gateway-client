@@ -25,6 +25,7 @@ Original documentation: <https://integratepayments.transactiongateway.com/mercha
 * [Durango Merchant Services](https://secure.durango-direct.com/merchants/resources/integration/integration_portal.php)
 * [Easy Pay Direct](https://secure.easypaydirectgateway.com/gw/merchants/resources/integration/integration_portal.php)
 * [Electronic Processing of North America (EPNA)](https://epna.transactiongateway.com/merchants/resources/integration/integration_portal.php)
+* [Empyrean Merchant Services](https://empyrean.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 * [Inspire Commerce (.pay / dot pay)](https://secure.inspiregateway.net/merchants/resources/integration/integration_portal.php)
 * [Merchant Guy](https://vizypay.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 * [Merchant One](https://secure.merchantonegateway.com/merchants/resources/integration/integration_portal.php)
