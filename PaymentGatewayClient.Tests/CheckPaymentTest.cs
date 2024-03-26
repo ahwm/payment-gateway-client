@@ -3,16 +3,34 @@ using PaymentGateway;
 using Shouldly;
 using PaymentGateway.Models;
 using System.Threading.Tasks;
+using WireMock.Server;
+using System.Linq;
+using WireMock.RequestBuilders;
+using WireMock.ResponseBuilders;
 
 namespace PaymentGatewayClient.Tests
 {
     public class CheckPaymentTest
     {
+        private readonly WireMockServer _wireMockServer;
+        private readonly string _url;
+
+        public CheckPaymentTest() 
+        {
+            _wireMockServer = WireMockServer.Start();
+            _url = _wireMockServer.Urls.First();
+        }
+
         [Fact]
         public async Task SaleApprovalTest()
         {
+            _wireMockServer
+                .Given(Request.Create().WithPath("/transact.php"))
+                .RespondWith(Response.Create().WithStatusCode(200)
+                .WithBody("response=1&responsetext=Approved"));
+
             var securityKey = "6457Thfj624V5r7WUwc5v6a68Zsd6YEm";
-            var client = new GatewayClient(securityKey);
+            var client = new GatewayClient(securityKey, _url);
             Sale sale = new Sale
             {
                 CheckABA = "123123123",
@@ -40,8 +58,13 @@ namespace PaymentGatewayClient.Tests
         [Fact]
         public async Task SaleDeclineTest()
         {
+            _wireMockServer
+                .Given(Request.Create().WithPath("/transact.php"))
+                .RespondWith(Response.Create().WithStatusCode(200)
+                .WithBody("response=2&responsetext=Declined"));
+
             var securityKey = "6457Thfj624V5r7WUwc5v6a68Zsd6YEm";
-            var client = new GatewayClient(securityKey);
+            var client = new GatewayClient(securityKey, _url);
             Sale sale = new Sale
             {
                 CheckABA = "123123123",
