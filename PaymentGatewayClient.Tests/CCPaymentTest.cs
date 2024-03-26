@@ -1,6 +1,7 @@
 ﻿using PaymentGateway;
 using PaymentGateway.Models;
 using Shouldly;
+using System.Threading.Tasks;
 using System.Linq;
 using WireMock.RequestBuilders;
 using WireMock.ResponseBuilders;
@@ -21,7 +22,7 @@ namespace PaymentGatewayClient.Tests
         }
 
         [Fact]
-        public void SaleApprovalTest()
+        public async Task SaleApprovalTest()
         {
             _wireMockServer
                 .Given(Request.Create().WithPath("/transact.php"))
@@ -46,13 +47,13 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Approved;
-            var result = client.Sale(sale);
+            var result = await client.SaleAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }
 
         [Fact]
-        public void SaleDeclineTest()
+        public async Task SaleDeclineTest()
         {
             _wireMockServer
                 .Given(Request.Create().WithPath("/transact.php"))
@@ -77,13 +78,13 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Declined;
-            var result = client.Sale(sale);
+            var result = await client.SaleAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }
 
         [Fact]
-        public void AuthorizeApprovalTest()
+        public async Task AuthorizeApprovalTest()
         {
             _wireMockServer
                 .Given(Request.Create().WithPath("/transact.php"))
@@ -108,13 +109,13 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Approved;
-            var result = client.Authorize(sale);
+            var result = await client.AuthorizeAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }
 
         [Fact]
-        public void AuthorizeDeclineTest()
+        public async Task AuthorizeDeclineTest()
         {
             _wireMockServer
                 .Given(Request.Create().WithPath("/transact.php"))
@@ -139,13 +140,13 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Declined;
-            var result = client.Authorize(sale);
+            var result = await client.AuthorizeAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }
 
         [Fact]
-        public void CreditApprovalTest()
+        public async Task CreditApprovalTest()
         {
             _wireMockServer
                 .Given(Request.Create().WithPath("/transact.php"))
@@ -170,13 +171,13 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Approved;
-            var result = client.Credit(sale);
+            var result = await client.CreditAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }
 
         [Fact]
-        public void CreditDeclineTest()
+        public async Task CreditDeclineTest()
         {
             _wireMockServer
                 .Given(Request.Create().WithPath("/transact.php"))
@@ -201,13 +202,13 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Error;
-            var result = client.Credit(sale);
+            var result = await client.CreditAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }
 
         [Fact]
-        public void ValidateApprovalTest()
+        public async Task ValidateApprovalTest()
         {
             _wireMockServer
                 .Given(Request.Create().WithPath("/transact.php"))
@@ -232,7 +233,7 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Approved;
-            var result = client.Validate(sale);
+            var result = await client.ValidateAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }
@@ -285,7 +286,7 @@ namespace PaymentGatewayClient.Tests
         }
 
         [Fact]
-        public void OfflineDeclineTest()
+        public async Task OfflineDeclineTest()
         {
             _wireMockServer
                 .Given(Request.Create().WithPath("/transact.php"))
@@ -311,7 +312,7 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Error;
-            var result = client.Offline(sale);
+            var result = await client.OfflineAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }
