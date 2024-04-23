@@ -239,7 +239,7 @@ namespace PaymentGatewayClient.Tests
         }
 
         [Fact]
-        public void OfflineApprovalTest()
+        public async Task OfflineApprovalTest()
         {
             _wireMockServer
                 .Given(Request.Create().WithPath("/transact.php"))
