@@ -262,7 +262,7 @@ namespace PaymentGatewayClient.Tests
                 Zip = "60193",
                 Payment = "creditcard",
             };
-            var authResult = client.Authorize(auth);
+            var authResult = await client.AuthorizeAsync(auth);
             Offline sale = new Offline
             {
                 CardNumber = "4111111111111111",
@@ -280,7 +280,7 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Approved;
-            var result = client.Offline(sale);
+            var result = await client.OfflineAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }
