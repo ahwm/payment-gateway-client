@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net462;netstandard2.0</TargetFrameworks>
@@ -6,13 +6,13 @@
 		<Authors>Adam Humpherys</Authors>
 		<Company />
 		<Product>Payment Gateway Client</Product>
-		<Copyright>(c) 2023 Adam Humpherys</Copyright>
+		<Copyright>(c) 2025 Adam Humpherys</Copyright>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/ahwm/payment-gateway-client</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/ahwm/payment-gateway-client</RepositoryUrl>
-		<Version>0.0.9</Version>
+		<Version>0.0.10</Version>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
-		<PackageReleaseNotes>Updated dependency with security issue</PackageReleaseNotes>
+		<PackageReleaseNotes>Added additional fields for 3D Secure transactions</PackageReleaseNotes>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Description>Client for interacting with Transaction Gateway endpoints for multiple providers compatible with Network Merchants (NMI)</Description>
 		<PackageTags>nmi bottomline payment gateway processor api mastercard amex visa canyonpay cyogate epna 0merchant easypaydirect vizypay durango</PackageTags>
