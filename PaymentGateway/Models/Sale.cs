@@ -286,6 +286,26 @@ namespace PaymentGateway.Models
         public string ThreeDSVersion { get; set; }
 
         /// <summary>
+        /// <para>Cardholder authentication verification value.</para>
+        /// <para>Format: base64 encoded</para>
+        /// </summary>
+        [ParameterName("cavv")]
+        public string CAVV { get; set; }
+
+        /// <summary>
+        /// <para>Cardholder authentication transaction id.</para>
+        /// <para>Format: base64 encoded</para>
+        /// </summary>
+        [ParameterName("xid")]
+        public string XID { get; set; }
+
+        /// <summary>
+        /// E-commerce indicator
+        /// </summary>
+        [ParameterName("eci")]
+        public string ECI { get; set; }
+
+        /// <summary>
         /// <para>Directory Server Transaction ID. May be provided as part of 3DSecure 2.0 authentication.</para>
         /// <para>Format: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</para>
         /// </summary>
@@ -297,6 +317,13 @@ namespace PaymentGateway.Models
         /// </summary>
         [ParameterName("pinless_debit_override")]
         public string PinlessDebitOverride { get; set; }
+
+        /// <summary>
+        /// <para>Specifies an exemption to Strong Customer Authentication (SCA) requirements for a transaction. Qualifying transactions bypass additional authentication steps. Available on select Processors; contact your Account Manager for details.</para>
+        /// <para>Values: "na", "low_value", "tra_exemption", "trusted_merchant", "secure_corporate_payment", "merchant_initiated_transaction", "recurring_payment", or "sca_delegation"</para>
+        /// </summary>
+        [ParameterName("sca_exemption")]
+        public string SCAExemption { get; set; }
     }
 
     /// <summary>
