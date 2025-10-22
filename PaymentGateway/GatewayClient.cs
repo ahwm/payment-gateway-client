@@ -133,7 +133,7 @@ namespace PaymentGateway
                 using (HttpClient client = new HttpClient())
                 {
                     using (var postContent = new FormUrlEncodedContent(Values))
-                    using (HttpResponseMessage response = await client.PostAsync(Provider.PostUrl + "/query.php", postContent))
+                    using (HttpResponseMessage response = await client.PostAsync(Provider.PostUrl + "/query.php", postContent).ConfigureAwait(false))
                     {
                         response.EnsureSuccessStatusCode();
                         using (HttpContent content = response.Content)
