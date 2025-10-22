@@ -657,7 +657,7 @@ namespace PaymentGateway.Query.Models
         /// 
         /// </summary>
         [XmlElement(ElementName="subscription")] 
-	    public List<Subscription> Subscription { get; set; } 
+        public List<Subscription> Subscription { get; set; } 
     }
 
     /// <summary>
