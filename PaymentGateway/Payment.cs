@@ -1,4 +1,5 @@
 ﻿using PaymentGateway.Models;
+using System.Threading.Tasks;
 
 namespace PaymentGateway
 {
@@ -9,9 +10,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse Sale(Sale request)
+        public async Task<GatewayResponse> SaleAsync(Sale request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request));
 
             return data;
         }
@@ -21,9 +22,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse Authorize(Authorize request)
+        public async Task<GatewayResponse> AuthorizeAsync(Authorize request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request));
 
             return data;
         }
@@ -33,9 +34,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse Credit(Credit request)
+        public async Task<GatewayResponse> CreditAsync(Credit request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request));
 
             return data;
         }
@@ -45,9 +46,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse Validate(Validate request)
+        public async Task<GatewayResponse> ValidateAsync(Validate request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request));
 
             return data;
         }
@@ -57,9 +58,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse Offline(Offline request)
+        public async Task<GatewayResponse> OfflineAsync(Offline request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request));
 
             return data;
         }
@@ -69,9 +70,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse Capture(Capture request)
+        public async Task<GatewayResponse> CaptureAsync(Capture request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request));
 
             return data;
         }

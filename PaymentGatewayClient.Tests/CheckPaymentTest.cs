@@ -2,6 +2,7 @@
 using PaymentGateway;
 using Shouldly;
 using PaymentGateway.Models;
+using System.Threading.Tasks;
 using WireMock.Server;
 using System.Linq;
 using WireMock.RequestBuilders;
@@ -21,7 +22,7 @@ namespace PaymentGatewayClient.Tests
         }
 
         [Fact]
-        public void SaleApprovalTest()
+        public async Task SaleApprovalTest()
         {
             _wireMockServer
                 .Given(Request.Create().WithPath("/transact.php"))
@@ -49,13 +50,13 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Approved;
-            var result = client.Sale(sale);
+            var result = await client.SaleAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }
 
         [Fact]
-        public void SaleDeclineTest()
+        public async Task SaleDeclineTest()
         {
             _wireMockServer
                 .Given(Request.Create().WithPath("/transact.php"))
@@ -83,7 +84,7 @@ namespace PaymentGatewayClient.Tests
             };
 
             var expectedResponse = GatewayResponseCode.Declined;
-            var result = client.Sale(sale);
+            var result = await client.SaleAsync(sale);
 
             result.Response.ShouldBe(expectedResponse);
         }
