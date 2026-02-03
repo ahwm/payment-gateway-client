@@ -1,0 +1,3354 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PaymentGateway</name>
+    </assembly>
+    <members>
+        <member name="T:PaymentGateway.GatewayClient">
+            <summary>
+            Primary client for interacting with the gateway
+            </summary>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.AddCustomerAsync(PaymentGateway.Models.AddCustomer)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.UpdateCustomerAsync(PaymentGateway.Models.UpdateCustomer)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.DeleteCustomerAsync(PaymentGateway.Models.DeleteCustomer)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.CustomerSaleAsync(PaymentGateway.Models.CustomerSale)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.CustomerAuthAsync(PaymentGateway.Models.CustomerAuth)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.CustomerCreditAsync(PaymentGateway.Models.CustomerCredit)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.CustomerOfflineAsync(PaymentGateway.Models.CustomerOffline)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PaymentGateway.GatewayClient.RequestStartedEventHandler">
+            <summary>
+            Event when a request is initiated
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="E:PaymentGateway.GatewayClient.RequestStarted">
+            <summary>
+            Invoked when request is initiated
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.GatewayClient.RequestCompletedEventHandler">
+            <summary>
+            Event when a request is completed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="E:PaymentGateway.GatewayClient.RequestCompleted">
+            <summary>
+            Invoked when request is competed
+            </summary>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.#ctor(System.String,PaymentGateway.GatewayProvider)">
+            <summary>
+            Initialize for use with any supported provider
+            </summary>
+            <param name="securityKey"></param>
+            <param name="provider"></param>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.#ctor(System.String)">
+            <summary>
+            Initialize for use with default provider (NMI)
+            </summary>
+            <param name="securityKey"></param>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.#ctor(System.String,System.String)">
+            <summary>
+            Initialize for use with any supported provider. Please file an issue at <a href="https://github.com/ahwm/payment-gateway-client">https://github.com/ahwm/payment-gateway-client</a> if using a provider not included
+            </summary>
+            <param name="securityKey"></param>
+            <param name="postUrl"></param>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.CreateInvoiceAsync(PaymentGateway.Models.CreateInvoice)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.UpdateInvoiceAsync(PaymentGateway.Models.UpdateInvoice)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.SendInvoiceAsync(PaymentGateway.Models.SendInvoice)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.CloseInvoiceAsync(PaymentGateway.Models.CloseInvoice)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.SaleAsync(PaymentGateway.Models.Sale)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.AuthorizeAsync(PaymentGateway.Models.Authorize)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.CreditAsync(PaymentGateway.Models.Credit)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.ValidateAsync(PaymentGateway.Models.Validate)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.OfflineAsync(PaymentGateway.Models.Offline)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.CaptureAsync(PaymentGateway.Models.Capture)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.AddPlanAsync(PaymentGateway.Models.AddRecurringPlan)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.EditPlanAsync(PaymentGateway.Models.EditRecurringPlan)">
+            <summary>
+            <para>Edit an existing recurring plan.</para>
+            <para><em>Be careful when editing an existing plan, as all customers signed up for this plan will have their billing changed based on your edits.</em></para>
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.AddSubscriptionAsync(PaymentGateway.Models.AddSubscription)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.UpdateSubscriptionAsync(PaymentGateway.Models.UpdateSubscription)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.DeleteSubscriptionAsync(PaymentGateway.Models.DeleteSubscription)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PaymentGateway.GatewayException">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PaymentGateway.GatewayException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PaymentGateway.GatewayException.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:PaymentGateway.GatewayException.#ctor(System.String,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="msg"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:PaymentGateway.GatewayException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:PaymentGateway.GatewayException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:PaymentGateway.GatewayProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.ZeroMerchant">
+            <summary>
+            0 Merchant. See <a href="https://0merchant.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://0merchant.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.AdvancedMerchantGroup">
+            <summary>
+            Advanced Merchant Group. See <a href="https://secure.advancedmerchantgroupgateway.com/merchants/resources/integration/integration_portal.php">https://secure.advancedmerchantgroupgateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.AliantPayments">
+            <summary>
+            Aliant Payments. See <a href="https://secure.apsmerchantgateway.com/merchants/resources/integration/integration_portal.php">https://secure.apsmerchantgateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.AlignPay">
+            <summary>
+            Aliant Payments. See <a href="https://gateway.alignpay.com/merchants/resources/integration/integration_portal.php">https://gateway.alignpay.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.BottomLinePayments">
+            <summary>
+            Bottom Line Payments. See <a href="https://secure.bottomlinegateway.com/merchants/resources/integration/integration_portal.php">https://secure.bottomlinegateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.CanyonPay">
+            <summary>
+            Canyon Pay. See <a href="https://canyonpay.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://canyonpay.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.Charge1">
+            <summary>
+            Charge1. See <a href="https://secure.charge1.com/merchants/resources/integration/integration_portal.php">https://secure.charge1.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.CMS">
+            <summary>
+            CMS. See <a href="https://cms.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://cms.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.CryptoBucks">
+            <summary>
+            CryptoBucks (not for use with crypto currency API). See <a href="https://secure.apsmerchantgateway.com/merchants/resources/integration/integration_portal.php">https://secure.apsmerchantgateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.CyoGate">
+            <summary>
+            CyoGate. See <a href="https://secure.cyogate.net/merchants/resources/integration/integration_portal.php">https://secure.cyogate.net/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.DurangoMerchantServices">
+            <summary>
+            Durango Merchant Services. See <a href="https://secure.durango-direct.com/merchants/resources/integration/integration_portal.php">https://secure.durango-direct.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.EasyPayDirect">
+            <summary>
+            Easy Pay Direct. See <a href="https://secure.easypaydirectgateway.com/merchants/resources/integration/integration_portal.php">https://secure.easypaydirectgateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.Empyrean">
+            <summary>
+            Empyrean Merchant Services. See <a href="https://empyrean.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://empyrean.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.EPNA">
+            <summary>
+            Electronic Processing of North America (EPNA). See <a href="https://epna.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://epna.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.InspireCommerceDotPay">
+            <summary>
+            Inspire Commerce (.pay / dot pay). See <a href="https://secure.inspiregateway.net/merchants/resources/integration/integration_portal.php">https://secure.inspiregateway.net/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.IntegratePayments">
+            <summary>
+            Integrate Payments. See <a href="https://integratepayments.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://integratepayments.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.MerchantGuy">
+            <summary>
+            Merchant Guy. See <a href="https://secure.merchantguygateway.com/merchants/resources/integration/integration_portal.php">https://secure.merchantguygateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.MerchantOne">
+            <summary>
+            Merchant One. See <a href="https://secure.merchantonegateway.com/merchants/resources/integration/integration_portal.php">https://secure.merchantonegateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.MSGPay">
+            <summary>
+            MSG Payment Systems. See <a href="https://msgpay.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://msgpay.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.NationalProcessing">
+            <summary>
+            National Processing. See <a href="https://secure.nationalprocessinggateway.com/merchants/resources/integration/integration_portal.php">https://secure.nationalprocessinggateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.NMI">
+            <summary>
+            Network Merchants (NMI). See <a href="https://secure.networkmerchants.com/merchants/resources/integration/integration_portal.php">https://secure.networkmerchants.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.Payabli">
+            <summary>
+            Payabli (Centavo Inc). See <a href="https://centavo.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://centavo.transactiongateway.comm/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.PayKings">
+            <summary>
+            PayKings. See <a href="https://paykings.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://paykings.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.PayDoughMe">
+            <summary>
+            PayDough.Me. See <a href="https://paydoughme.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://paydoughme.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.Payscape">
+            <summary>
+            Payscape. See <a href="https://secure.payscapegateway.com/merchants/resources/integration/integration_portal.php">https://secure.payscapegateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.PayEngines">
+            <summary>
+            Pay Engines. See <a href="https://payengines.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://payengines.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.PlanetAuthorize">
+            <summary>
+            PlanetAuthorize. See <a href="https://secure.planetauthorizegateway.com/merchants/resources/integration/integration_portal.php">https://secure.planetauthorizegateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.RedFynn">
+            <summary>
+            RedFynn Technologies. See <a href="https://secure.redfynngateway.com/merchants/resources/integration/integration_portal.php">https://secure.redfynngateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.SecureGlobalPay">
+            <summary>
+            SecureGlobalPay. See <a href="https://secureglobalpay.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://secureglobalpay.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.Sibacpay">
+            <summary>
+            Sibacpay. See <a href="https://sibacpay.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://sibacpay.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.SkyBank">
+            <summary>
+            SkyBank Financial. See <a href="https://secure.skybankgateway.com/merchants/resources/integration/integration_portal.php">https://secure.skybankgateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.TranzCrypt">
+            <summary>
+            TranzCrypt. See <a href="https://secure.tranzcrypt.com/merchants/resources/integration/integration_portal.php">https://secure.tranzcrypt.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.UMSBanking">
+            <summary>
+            UMS Banking Gateway. See <a href="https://umsbanking.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://umsbanking.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.ValuedMerchants">
+            <summary>
+            Valued Merchant Services. See <a href="https://https://secure.valuedmerchantgateway.com/merchants/resources/integration/integration_portal.php">https://secure.valuedmerchantgateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.Vericheck">
+            <summary>
+            Vericheck. See <a href="https://vericheck.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://vericheck.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.VizyPay">
+            <summary>
+            VizyPay. See <a href="https://vizypay.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://vizypay.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="M:PaymentGateway.GatewayProvider.#ctor(System.String)">
+            <summary>
+             Please file an issue at <a href="https://github.com/ahwm/payment-gateway-client">https://github.com/ahwm/payment-gateway-client</a> if using a provider not included
+            </summary>
+            <param name="postUrl"></param>
+        </member>
+        <member name="T:PaymentGateway.Models.AddCustomer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.CustomerVaultId">
+            <summary>
+            Specifies a Customer Vault id. If not set, the payment gateway will randomly generate a Customer Vault id.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.BillingId">
+            <summary>
+            Billing id to be assigned or updated. If none is provided, one will be created or the billing id with priority '1' will be updated.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.PaymentToken">
+            <summary>
+            The tokenized version of the customer's card or check information. This will be generated by Collect.js and is usable only once.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.GooglePayPaymentData">
+            <summary>
+            The encrypted token created when integration directly to the Google Pay SDK.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.CardNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.CardExpiration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.CVV">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.CheckName">
+            <summary>
+            Name on the customer's ACH account
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.CheckABA">
+            <summary>
+            Customer's bank routing number
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.CheckAccount">
+            <summary>
+            Customer's bank account number
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.AccountHolderType">
+            <summary>
+            The type of ACH account the customer has ("business" or "personal")
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.AccountType">
+            <summary>
+            The ACH account entity of the customer ("checking" or "savings")
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.StandardEntryClass">
+            <summary>
+            The Standard Entry Class code of the ACH transaction ("PPD", "WEB", "TEL", or "CCD")
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.Currency">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.Payment">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.OrderId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.OrderDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.MerchantDefinedFields">
+            <summary>
+            Can be set up in merchant control panel under 'Settings'->'Merchant Defined Fields'.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.FirstName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.LastName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.Address1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.City">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.State">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.Zip">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.Country">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.Phone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.Company">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.Address2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.Fax">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.ShippingId">
+            <summary>
+            Shipping entry id. If none is provided, one will be created or the billing id with priority '1' will be updated.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.ShippingFirstName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.ShippingLastName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.ShippingCompany">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.ShippingAddress1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.ShippingAddress2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.ShippigCity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.ShippingState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.ShippingZip">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.ShippingCountry">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.ShippingEmail">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.SourceTransactionId">
+            <summary>
+            Specifies a payment gateway transaction id in order to associate payment information with a Customer Vault record.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddCustomer.ACUEnabled">
+            <summary>
+            If set to true, credit card will be evaluated and sent based upon Automatic Card Updater settings. If set to false, credit card will not be submitted for updates when Automatic Card Updater runs.
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.UpdateCustomer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.DeleteCustomer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.DeleteCustomer.CustomerVaultId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.CustomerSale">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CustomerSale.CustomerVaultId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CustomerSale.Descriptor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CustomerSale.DescriptorPhone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CustomerSale.OrderDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CustomerSale.InitiatedBy">
+            <summary>
+            Who initiated the transaction. Values: 'customer' or 'merchant'
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CustomerSale.InitialTransactionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CustomerSale.StoredCredentialIndicator">
+            <summary>
+            <para>The indicator of the stored credential.</para>
+            <para>Values: 'stored' or 'used'</para>
+            <para>Use 'stored' when processing the initial transaction in which you are storing a customer's payment details (customer credentials) in the Customer Vault or other third-party payment storage system.</para>
+            <para>Use 'used' when processing a subsequent or follow-up transaction using the customer payment details (customer credentials) you have already stored to the Customer Vault or third-party payment storage method.</para>
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.CustomerAuth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.CustomerCredit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.CustomerOffline">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.GatewayEventArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.GatewayEventArgs.Results">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PaymentGateway.Models.GatewayEventArgs.#ctor(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            
+            </summary>
+            <param name="_values"></param>
+        </member>
+        <member name="M:PaymentGateway.Models.GatewayEventArgs.#ctor(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="_values"></param>
+        </member>
+        <member name="T:PaymentGateway.Models.GatewayResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.GatewayResponse.Response">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.GatewayResponse.ResponseText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.GatewayResponse.Data">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PaymentGateway.Models.GatewayResponse.#ctor(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="values"></param>
+        </member>
+        <member name="T:PaymentGateway.Models.GatewayResponseCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PaymentGateway.Models.GatewayResponseCode.Approved">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PaymentGateway.Models.GatewayResponseCode.Declined">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PaymentGateway.Models.GatewayResponseCode.Error">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.CreateInvoice">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.Amount">
+            <summary>
+            <para>Total amount to be invoiced. Must be greater than 0.00. <i>Required</i>.</para>
+            <para>Format: x.xx</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.Email">
+            <summary>
+            <para>Billing email address. <i>Required</i>.</para>
+            <para>An invoice will be sent to this address when it is created.</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.PaymentTerms">
+            <summary>
+            <para>When the invoice should be paid. One of 'upon_receipt' (default) or integers from 0-999</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.PaymentMethodsAllowed">
+            <summary>
+            <para>What payment methods a customer may use when paying invoice.</para>
+            <para>Defaults to all available payment methods available in your merchant account</para>
+            <para>Values: 'cc', 'ck', and 'cs'. Multiple payment types can be selected by comma-separating values.</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.ProcessorId">
+            <summary>
+            <para>If using Multiple MIDs, route to this processor (processor_id is obtained under Settings → Transaction Routing in the Control Panel).</para>
+            <para>If allowing multiple payment types, one processor_id can be selected per payment type by submitting comma-separated values.</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.Currency">
+            <summary>
+            <para>The transaction currency. Format: ISO 4217</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.OrderDescription">
+            <summary>
+            <para>Order Description</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.OrderId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.CustomerId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.CustomerTaxId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.Tax">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.Shipping">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.PONumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.FirstName">
+            <summary>
+            Cardholder's first name.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.LastName">
+            <summary>
+            Cardholder's last name.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.Company">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.Address1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.Address2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.City">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.State">
+            <summary>
+            Card billing state. Format: CC
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.Zip">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.Country">
+            <summary>
+            Card billing country as shown in ISO 3166. Format: CC
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.Phone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.Fax">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.Website">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.ShippingFirstName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.ShippingLastName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.ShippingCompany">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.ShippingAddress1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.ShippingAddress2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.ShippigCity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.ShippingState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.ShippingZip">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.ShippingCountry">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.ShippingEmail">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.MerchantDefinedFields">
+            <summary>
+            You can pass custom information in up to 20 fields.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CreateInvoice.Products">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.UpdateInvoice">
+            <summary>
+            All variables (besides currency) on an invoice may be updated. Updating an invoice will not result in a new invoice being sent to the customer. To send the invoice after updating an invoice, use the send_invoice request after making changes.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.UpdateInvoice.InvoiceId">
+            <summary>
+            The invoice ID to be updated.
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.SendInvoice">
+            <summary>
+            The invoice will be sent to the billing email address assigned to the invoice.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.SendInvoice.InvoiceId">
+            <summary>
+            The invoice ID to be updated.
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.CloseInvoice">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.CloseInvoice.InvoiceId">
+            <summary>
+            The invoice ID to be updated.
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.InvoiceProduct">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.InvoiceProduct.ItemProductCode">
+            <summary>
+            <para>Merchant defined description code of the item being purchased.</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.InvoiceProduct.ItemDescription">
+            <summary>
+            <para>Description of the item(s) being supplied.</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.InvoiceProduct.ItemCommodityCode">
+            <summary>
+            <para>International description code of the individual good or service being supplied. The acquirer or processor will provide a list of current codes.</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.InvoiceProduct.ItemUnitOfMeasure">
+            <summary>
+            <para>Code for units of measurement as used in international trade. Default: 'EACH'</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.InvoiceProduct.ItemUnitCost">
+            <summary>
+            Unit cost of item purchased, may contain up to 4 decimal places.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.InvoiceProduct.ItemQuantity">
+            <summary>
+            <para>Quantity of the item(s) being purchased.</para>
+            <para>Default: '1'</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.InvoiceProduct.ItemTotalAmount">
+            <summary>
+            Purchase amount associated with the item. Defaults to: 'item_unit_cost_#' x 'item_quantity_#' rounded to the nearest penny.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.InvoiceProduct.ItemTaxAmount">
+            <summary>
+            <para>Amount of sales tax on specific item. Amount should not be included in 'total_amount_#'.</para>
+            <para>Default: '0.00'</para>
+            <para>Format: x.xx</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.InvoiceProduct.ItemTaxRate">
+            <summary>
+            Percentage representing the value-added tax applied.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.InvoiceProduct.ItemDiscountAmount">
+            <summary>
+            Discount amount which can have been applied by the merchant on the sale of the specific item. Amount should not be included in 'total_amount_#'.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.InvoiceProduct.ItemDiscountRate">
+            <summary>
+            Discount rate for the line item. 1% = 1.00.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.InvoiceProduct.ItemTaxType">
+            <summary>
+            Type of value-added taxes that are being used.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.InvoiceProduct.ItemAlternateTaxId">
+            <summary>
+            Tax identification number of the merchant that reported the alternate tax amount.
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.AddRecurringPlan">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddRecurringPlan.PlanPayments">
+            <summary>
+            <para>The number of payments before the recurring plan is complete.</para>
+            <para>Notes: '0' for until canceled</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddRecurringPlan.PlanAmount">
+            <summary>
+            <para>The plan amount to be charged each billing cycle.</para>
+            <para>Format: x.xx</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddRecurringPlan.PlanName">
+            <summary>
+            The display name of the plan.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddRecurringPlan.PlanId">
+            <summary>
+            The unique plan ID that references only this recurring plan.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddRecurringPlan.DayFrequency">
+            <summary>
+            How often, in days, to charge the customer. Cannot be set with 'month_frequency' or 'day_of_month'.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddRecurringPlan.MonthFrequency">
+            <summary>
+            <para>How often, in months, to charge the customer. Cannot be set with 'day_frequency'. Must be set with 'day_of_month'.</para>
+            <para>Values: 1 through 24</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddRecurringPlan.DayOfMonth">
+            <summary>
+            <para>The day that the customer will be charged. Cannot be set with 'day_frequency'. Must be set with 'month_frequency'.</para>
+            <para>Values: 1 through 31 - for months without 29, 30, or 31 days, the charge will be on the last day</para>
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.EditRecurringPlan">
+            <summary>
+            <para>Edit an existing recurring plan.</para>
+            <para><em>Be careful when editing an existing plan, as all customers signed up for this plan will have their billing changed based on your edits.</em></para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.EditRecurringPlan.CurrentPlanId">
+            <summary>
+            Only relevant for editing an existing plan, the value will be the 'plan_id' that will be edited in this request.
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.AddSubscription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.PlanId">
+            <summary>
+            <para>The plan ID of the plan that the subscription will be associated with.</para>
+            <para>Omit to add custom subscription.</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.PlanPayments">
+            <summary>
+            <para>The number of payments before the recurring plan is complete.</para>
+            <para>Notes: '0' for until canceled</para>
+            <para><em>Omit if 'PlanId' is set</em></para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.PlanAmount">
+            <summary>
+            <para>The plan amount to be charged each billing cycle.</para>
+            <para>Format: x.xx</para>
+            <para><em>Omit if 'PlanId' is set</em></para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.DayFrequency">
+            <summary>
+            <para>How often, in days, to charge the customer. Cannot be set with 'month_frequency' or 'day_of_month'.</para>
+            <para><em>Omit if 'PlanId' is set</em></para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.MonthFrequency">
+            <summary>
+            <para>How often, in months, to charge the customer. Cannot be set with 'day_frequency'. Must be set with 'day_of_month'.</para>
+            <para>Values: 1 through 24</para>
+            <para><em>Omit if 'PlanId' is set</em></para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.DayOfMonth">
+            <summary>
+            <para>The day that the customer will be charged. Cannot be set with 'day_frequency'. Must be set with 'month_frequency'.</para>
+            <para>Values: 1 through 31 - for months without 29, 30, or 31 days, the charge will be on the last day</para>
+            <para><em>Omit if 'PlanId' is set</em></para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.StartDate">
+            <summary>
+            <para>The first day that the customer will be charged.</para>
+            <para>Format: YYYYMMDD</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.PaymentToken">
+            <summary>
+            The tokenized version of the customer's card or check information. This will be generated by Collect.js and is usable only once.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.GooglePayPaymentData">
+            <summary>
+            The encrypted token created when integration directly to the Google Pay SDK.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.CardNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.CardExpiration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.Payment">
+            <summary>
+            Type of payment ("creditcard" or "check")
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.CheckName">
+            <summary>
+            Name on the customer's ACH account
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.CheckABA">
+            <summary>
+            Customer's bank routing number
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.CheckAccount">
+            <summary>
+            Customer's bank account number
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.AccountHolderType">
+            <summary>
+            The type of ACH account the customer has ("business" or "personal")
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.AccountType">
+            <summary>
+            The ACH account entity of the customer ("checking" or "savings")
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.StandardEntryClass">
+            <summary>
+            The Standard Entry Class code of the ACH transaction ("PPD", "WEB", "TEL", or "CCD")
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.Currency">
+            <summary>
+            The transaction currency. Format: ISO 4217 (USD, CAD, etc)
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.FirstName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.LastName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.Address1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.City">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.State">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.Zip">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.Country">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.Phone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.Company">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.Address2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.Fax">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.OrderId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.OrderDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.ProcessorId">
+            <summary>
+            If using Multiple MIDs, route to this processor (processor_id is obtained under Settings → Transaction Routing in the Control Panel).
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.PONumber">
+            <summary>
+            Cardholder's purchase order number.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.CustomerReceipt">
+            <summary>
+            <para>If set to true, when the customer is charged, they will be sent a transaction receipt.</para>
+            <para>Values: 'true' or 'false'</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.SourceTransactionId">
+            <summary>
+            Specifies a payment gateway transaction id in order to associate payment information with a Subscription record.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.MerchantDefinedFields">
+            <summary>
+            Can be set up in merchant control panel under 'Settings'->'Merchant Defined Fields'.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.AddSubscription.ACUEnabled">
+            <summary>
+            <para>If set to true, credit card will be evaluated and sent based upon Automatic Card Updater settings. If set to false, credit card will not be submitted for updates when Automatic Card Updater runs.</para>
+            <para>Default: 'true'</para>
+            <para>Values: 'true' or 'false'</para>
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.UpdateSubscription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.UpdateSubscription.SubscriptionId">
+            <summary>
+            The subscription ID that will be updated.
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.DeleteSubscription">
+            <summary>
+            Delete a subscription
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.DeleteSubscription.SubscriptionId">
+            <summary>
+            The subscription ID that will be deleted.
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.Sale">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.FirstName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.LastName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.Address1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.Address2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.City">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.State">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.Zip">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.Country">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.Phone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.Fax">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.SocialSecurityNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.ShippingFirstName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.ShippingLastName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.ShippingCompany">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.ShippingAddress1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.ShippingAddress2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.ShippingCity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.ShippingState">
+            <summary>
+            Format: CC
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.ShippingZip">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.ShippingCountry">
+            <summary>
+            Country codes are as shown in ISO 3166. Format: CC
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.ShippingEmail">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.PaymentToken">
+            <summary>
+            The tokenized version of the customer's card or check information. This will be generated by Collect.js and is usable only once.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.GooglePayPaymentData">
+            <summary>
+            The encrypted token created when integration directly to the Google Pay SDK.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.CardNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.CardExpiration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.CVV">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.CheckName">
+            <summary>
+            Name on the customer's ACH account
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.CheckABA">
+            <summary>
+            Customer's bank routing number
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.CheckAccount">
+            <summary>
+            Customer's bank account number
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.AccountHolderType">
+            <summary>
+            The type of ACH account the customer has ("business" or "personal")
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.AccountType">
+            <summary>
+            The ACH account entity of the customer ("checking" or "savings")
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.StandardEntryClass">
+            <summary>
+            The Standard Entry Class code of the ACH transaction ("PPD", "WEB", "TEL", or "CCD")
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.Amount">
+            <summary>
+            Format: x.xx
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.OrderId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.Surcharge">
+            <summary>
+            Format: x.xx
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.CashDiscount">
+            <summary>
+            <para>How much less a customer paid due to a cash discount</para>
+            <para>Format: x.xx, only applicable to cash and check transactions</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.Currency">
+            <summary>
+            The transaction currency. Format: ISO 4217 (USD, CAD, etc)
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.Payment">
+            <summary>
+            Type of payment ("creditcard", "check", "cash")
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.ProcessorId">
+            <summary>
+            If using Multiple MIDs, route to this processor (processor_id is obtained under Settings → Transaction Routing in the Control Panel).
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.TestMode">
+            <summary>
+            Set to "enabled" <em>and</em> use the test credit card account information in the provider's documentation to test a one-off transaction. 
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.IPAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.MerchantDefinedFields">
+            <summary>
+            Can be set up in merchant control panel under 'Settings'->'Merchant Defined Fields'.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.Products">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.CustomerReceipt">
+            <summary>
+            <para>If set to true, when the customer is charged, they will be sent a transaction receipt.</para>
+            <para>Values: 'true' or 'false'</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.SignatureImage">
+            <summary>
+            <para>Cardholder signature image. For use with "sale" and "auth" actions only.</para>
+            <para>Format: base64 encoded raw PNG image. (16kiB maximum)</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.CardholderAuth">
+            <summary>
+            <para>Set 3D Secure condition. Value used to determine E-commerce indicator (ECI).</para>
+            <para>Values: 'verified' or 'attempted'</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.ThreeDSVersion">
+            <summary>
+            <para>3DSecure version.</para>
+            <para>Examples: "2.0.0" or "2.2.0"</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.CAVV">
+            <summary>
+            <para>Cardholder authentication verification value.</para>
+            <para>Format: base64 encoded</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.XID">
+            <summary>
+            <para>Cardholder authentication transaction id.</para>
+            <para>Format: base64 encoded</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.ECI">
+            <summary>
+            E-commerce indicator
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.DirectoryServerId">
+            <summary>
+            <para>Directory Server Transaction ID. May be provided as part of 3DSecure 2.0 authentication.</para>
+            <para>Format: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.PinlessDebitOverride">
+            <summary>
+            Set to 'Y' if you have Pinless Debit Conversion enabled but want to opt out for this transaction. Feature applies to selected processors only.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Sale.SCAExemption">
+            <summary>
+            <para>Specifies an exemption to Strong Customer Authentication (SCA) requirements for a transaction. Qualifying transactions bypass additional authentication steps. Available on select Processors; contact your Account Manager for details.</para>
+            <para>Values: "na", "low_value", "tra_exemption", "trusted_merchant", "secure_corporate_payment", "merchant_initiated_transaction", "recurring_payment", or "sca_delegation"</para>
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.Authorize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.Credit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.Validate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.Offline">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Offline.AuthorizationCode">
+            <summary>
+            Specify authorization code. For use with "offline" action only.
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.Capture">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Capture.TransactionId">
+            <summary>
+            Original payment gateway transaction id
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Capture.Amount">
+            <summary>
+            <para>Total amount to be settled. This amount must be equal to or less than the original authorized amount.</para>
+            <para>Format: x.xx</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Capture.TrackingNumber">
+            <summary>
+            Shipping tracking number
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Capture.OrderId">
+            <summary>
+            Order id.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Capture.ShippingCarrier">
+            <summary>
+            <para>Shipping carrier.</para>
+            <para>Values: 'ups', 'fedex', 'dhl', or 'usps'</para>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Capture.SignatureImage">
+            <summary>
+            <para>Cardholder signature image.</para>
+            <para>Format: base64 encoded raw PNG image. (16kiB maximum)</para>
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.Action">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Action.Amount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Action.ActionType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Action.Date">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Action.Success">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Action.IPAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Action.Source">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Action.ApiMethod">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Action.Username">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Action.ResponseText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Action.ResponseCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Action.ProcessorResponseText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Action.TapToMobile">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Action.ProcessorResponseCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Action.DeviceLicenseNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Action.DeviceNickname">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.Address">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Address.FirstName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Address.LastName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Address.Address1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Address.Address2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Address.Company">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Address.City">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Address.State">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Address.PostalCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Address.Country">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Address.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Address.Phone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Address.CellPhone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Address.Fax">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.Card">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Card.CCNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Card.CCExp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Card.CAVV">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Card.CAVVResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Card.XID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Card.ECI">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Card.AVSResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Card.CSCResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Card.CardholderAuth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Card.CCStartDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Card.CCIssueNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Card.CardBalance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Card.CardAvailableBalance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Card.EntryMode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Card.CCBin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Card.CCType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Card.FeatureToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.Check">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Check.CheckAccount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Check.CheckABA">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Check.CheckName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Check.AccountHolderType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Check.AccountType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Check.SECCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.Event">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.Merchant">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.Features">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.SubscriptionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.SubscriptionType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.NextChargeDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.CompletedPayments">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.AttemptedPayments">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.RemainingPayments">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.Plan">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.TransactionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.TransactionType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.Condition">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.ProcessorId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.PONumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.OrderDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.OrderId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.CustomerId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.CustomerTaxId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.Website">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.Shipping">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.Currency">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.Tax">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.Surcharge">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.CashDiscount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.Tip">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.RequestedAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.ShippingCarrier">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.TrackingNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.ShippingDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.PartialPaymentId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.PartialPaymentBalance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.PlatformId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.AuthorizationCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.SocialSecurityNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.DriversLicenseNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.DriversLicenseState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.DriversLicenseDOB">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.DutyAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.DiscountAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.NationalTaxAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.SummaryCommodityCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.AlternateTaxAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.VatTaxAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.VatTaxRate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.BillingAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.ShippingAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.Check">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.Card">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.MerchantDefinedFields">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Event.Action">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.Plan">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Plan.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Plan.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Plan.Amount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Plan.DayFrequency">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Plan.Payments">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Plan.MonthFrequency">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Plan.DayOfMonth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.Features">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Features.IsTestMode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.Merchant">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Merchant.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.Merchant.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.WebhookData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookData.EventId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookData.EventType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookData.EventBody">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookData.EventBodyRaw">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.WebhookResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PaymentGateway.Models.WebhookResponse.Data">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PaymentGateway.Models.WebhookResponse.IsValid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponse.Nonce">
+            <summary>
+            Single-use nonce. The application should validate one-time use to prevent replay attacks.
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.WebhookResponseEventType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.ChargebackBatchComplete">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.RecurringPlanAdd">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.RecurringPlanUpdate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.RecurringPlanDelete">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.RecurringSubscriptionAdd">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.RecurringSubscriptionUpdate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.RecurringSubscriptionDelete">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.SettlementBatchComplete">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.SettlementBatchFailure">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionSaleUnknown">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionSaleSuccess">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionSaleFailure">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionAuthSuccess">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionAuthFailure">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionAuthUnknown">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionCaptureSuccess">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionCaptureFailure">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionCaptureUnknown">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionVoidSuccess">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionVoidFailure">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionVoidUnknown">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionRefundSuccess">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionRefundFailure">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionRefundUnknown">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionCreditSuccess">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionCreditFailure">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionCreditUnknown">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionValidateSuccess">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionValidateFailure">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.TransactionValidateUnknown">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.ACUSummaryAutomaticallyUpdated">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.ACUSummaryContactCustomer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.WebhookResponseEventType.ACUSummaryClosedAccount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PaymentGateway.Models.WebhookResponseEventType.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="eventType"></param>
+        </member>
+        <member name="M:PaymentGateway.Models.WebhookResponseEventType.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:PaymentGateway.Models.WebhookResponseEventType.op_Implicit(PaymentGateway.Models.WebhookResponseEventType)~System.String">
+            <inheritdoc/>
+        </member>
+        <member name="M:PaymentGateway.Models.WebhookResponseEventType.op_Implicit(System.String)~PaymentGateway.Models.WebhookResponseEventType">
+            <inheritdoc/>
+        </member>
+        <member name="T:PaymentGateway.Models.WebhookResponseEventTypeJsonConverter">
+            <inheritdoc/>
+        </member>
+        <member name="M:PaymentGateway.Models.WebhookResponseEventTypeJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:PaymentGateway.Models.WebhookResponseEventTypeJsonConverter.Write(System.Text.Json.Utf8JsonWriter,PaymentGateway.Models.WebhookResponseEventType,System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="T:PaymentGateway.Query.Models.Product">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Product.Sku">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Product.Quantity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Product.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Product.Amount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Query.Models.Action">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Action.Amount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Action.ActionType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Action.Date">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Action.Success">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Action.IpAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Action.Source">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Action.ApiMethod">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Action.Username">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Action.ResponseText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Action.BatchId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Action.ProcessorBatchId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Action.ResponseCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Action.ProcessorResponseText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Action.ProcessorResponseCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Action.RequestedAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Action.DeviceLicenseNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Action.DeviceNickname">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Query.Models.Transaction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.TransactionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.PartialPaymentId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.PartialPaymentBalance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.PlatformId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.TransactionType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Condition">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.OrderId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.AuthorizationCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Ponumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.OrderDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.FirstName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.LastName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Address1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Address2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Company">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.City">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.State">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.PostalCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Country">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Phone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Fax">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.CellPhone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Customertaxid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Customerid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Website">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.ShippingFirstName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.ShippingLastName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.ShippingAddress1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.ShippingAddress2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.ShippingCompany">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.ShippingCity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.ShippingState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.ShippingPostalCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.ShippingCountry">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.ShippingEmail">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.ShippingCarrier">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.TrackingNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.ShippingDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Shipping">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.ShippingPhone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.CcNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.CcHash">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.CcExp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Cavv">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.CavvResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Xid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Eci">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.DirectoryServerId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.ThreeDsVersion">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.AvsResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.CscResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.CardholderAuth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.CcStartDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.CcIssueNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.CheckAccount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.CheckHash">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.CheckAba">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.CheckName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.AccountHolderType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.AccountType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.SecCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.DriversLicenseNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.DriversLicenseState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.DriversLicenseDob">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.SocialSecurityNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.ProcessorId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Tax">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Currency">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Surcharge">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.CashDiscount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Tip">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.CardBalance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.CardAvailableBalance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.EntryMode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.CcBin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.CcType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.SignatureImage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Product">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Transaction.Action">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Query.Models.QueryResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.QueryResponse.Transaction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.QueryResponse.Subscription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Query.Models.Plan">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Plan.PlanId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Plan.PlanName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Plan.PlanAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Plan.PlanPayments">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Plan.MonthFrequency">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Plan.DayOfMonth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Query.Models.MerchantDefinedField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.MerchantDefinedField.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.MerchantDefinedField.Text">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Query.Models.Subscription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.SubscriptionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.Plan">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.NextChargeDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.CompletedPayments">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.AttemptedPayments">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.RemainingPayments">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.Ponumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.Orderid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.OrderDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.Shipping">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.Tax">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.FirstName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.LastName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.Address1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.Address2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.Company">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.City">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.State">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.PostalCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.Country">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.Phone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.Fax">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.CellPhone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.Customertaxid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.Website">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.CcNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.CcHash">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.CcExp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.CcStartDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.CcIssueNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.CcBin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.ProcessorId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.MerchantDefinedField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Query.Models.Subscription.Text">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.WebhookParser">
+            <summary>
+            Methods to validate webhook events
+            </summary>
+        </member>
+        <member name="M:PaymentGateway.WebhookParser.ParseWebhookData(System.String,System.String,System.String)">
+            <summary>
+            Verify the webhook signature
+            </summary>
+            <param name="body">Webhook POST body</param>
+            <param name="signingKey">Signing Key from gateway control panel</param>
+            <param name="webhookSignature">Contents of "webhook-Signature" header</param>
+            <returns></returns>
+            <exception cref="T:PaymentGateway.GatewayException">If "webhook-Signature" header is missing nonce (t= paramenter) or signature (s= parameter)</exception>
+        </member>
+    </members>
+</doc>
