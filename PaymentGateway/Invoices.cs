@@ -12,7 +12,7 @@ namespace PaymentGateway
         /// <returns></returns>
         public async Task<GatewayResponse> CreateInvoiceAsync(CreateInvoice request)
         {
-            var data = new GatewayResponse(await MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }
@@ -24,7 +24,7 @@ namespace PaymentGateway
         /// <returns></returns>
         public async Task<GatewayResponse> UpdateInvoiceAsync(UpdateInvoice request)
         {
-            var data = new GatewayResponse(await MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }
@@ -36,7 +36,7 @@ namespace PaymentGateway
         /// <returns></returns>
         public async Task<GatewayResponse> SendInvoiceAsync(SendInvoice request)
         {
-            var data = new GatewayResponse(await MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }
@@ -48,7 +48,7 @@ namespace PaymentGateway
         /// <returns></returns>
         public async Task<GatewayResponse> CloseInvoiceAsync(CloseInvoice request)
         {
-            var data = new GatewayResponse(await MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }

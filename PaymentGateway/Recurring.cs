@@ -12,7 +12,7 @@ namespace PaymentGateway
         /// <returns></returns>
         public async Task<GatewayResponse> AddPlanAsync(AddRecurringPlan request)
         {
-            var data = new GatewayResponse(await MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }
@@ -25,7 +25,7 @@ namespace PaymentGateway
         /// <returns></returns>
         public async Task<GatewayResponse> EditPlanAsync(EditRecurringPlan request)
         {
-            var data = new GatewayResponse(await MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }
@@ -37,7 +37,7 @@ namespace PaymentGateway
         /// <returns></returns>
         public async Task<GatewayResponse> AddSubscriptionAsync(AddSubscription request)
         {
-            var data = new GatewayResponse(await MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }
@@ -49,7 +49,7 @@ namespace PaymentGateway
         /// <returns></returns>
         public async Task<GatewayResponse> UpdateSubscriptionAsync(UpdateSubscription request)
         {
-            var data = new GatewayResponse(await MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }
@@ -61,7 +61,7 @@ namespace PaymentGateway
         /// <returns></returns>
         public async Task<GatewayResponse> DeleteSubscriptionAsync(DeleteSubscription request)
         {
-            var data = new GatewayResponse(await MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }

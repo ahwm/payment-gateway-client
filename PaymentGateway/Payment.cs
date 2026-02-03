@@ -12,7 +12,7 @@ namespace PaymentGateway
         /// <returns></returns>
         public async Task<GatewayResponse> SaleAsync(Sale request)
         {
-            var data = new GatewayResponse(await MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }
@@ -24,7 +24,7 @@ namespace PaymentGateway
         /// <returns></returns>
         public async Task<GatewayResponse> AuthorizeAsync(Authorize request)
         {
-            var data = new GatewayResponse(await MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }
@@ -36,7 +36,7 @@ namespace PaymentGateway
         /// <returns></returns>
         public async Task<GatewayResponse> CreditAsync(Credit request)
         {
-            var data = new GatewayResponse(await MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }
@@ -48,7 +48,7 @@ namespace PaymentGateway
         /// <returns></returns>
         public async Task<GatewayResponse> ValidateAsync(Validate request)
         {
-            var data = new GatewayResponse(await MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }
@@ -60,7 +60,7 @@ namespace PaymentGateway
         /// <returns></returns>
         public async Task<GatewayResponse> OfflineAsync(Offline request)
         {
-            var data = new GatewayResponse(await MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }
@@ -72,7 +72,7 @@ namespace PaymentGateway
         /// <returns></returns>
         public async Task<GatewayResponse> CaptureAsync(Capture request)
         {
-            var data = new GatewayResponse(await MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }
