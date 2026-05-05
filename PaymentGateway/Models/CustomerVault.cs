@@ -310,12 +310,6 @@ namespace PaymentGateway.Models
         public string OrderDescription { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [ParameterName("order_id")]
-        public string OrderId { get; set; }
-
-        /// <summary>
         /// Who initiated the transaction. Values: 'customer' or 'merchant'
         /// </summary>
         [ParameterName("initiated_by")]

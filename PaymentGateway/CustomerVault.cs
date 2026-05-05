@@ -14,9 +14,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse AddCustomer(AddCustomer request)
+        public async Task<GatewayResponse> AddCustomerAsync(AddCustomer request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }
@@ -26,9 +26,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse UpdateCustomer(UpdateCustomer request)
+        public async Task<GatewayResponse> UpdateCustomerAsync(UpdateCustomer request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }
@@ -38,9 +38,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse DeleteCustomer(DeleteCustomer request)
+        public async Task<GatewayResponse> DeleteCustomerAsync(DeleteCustomer request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }
@@ -50,9 +50,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse CustomerSale(CustomerSale request)
+        public async Task<GatewayResponse> CustomerSaleAsync(CustomerSale request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }
@@ -62,9 +62,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse CustomerAuth(CustomerAuth request)
+        public async Task<GatewayResponse> CustomerAuthAsync(CustomerAuth request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }
@@ -74,9 +74,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse CustomerCredit(CustomerCredit request)
+        public async Task<GatewayResponse> CustomerCreditAsync(CustomerCredit request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }
@@ -86,9 +86,9 @@ namespace PaymentGateway
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public GatewayResponse CustomerOffline(CustomerOffline request)
+        public async Task<GatewayResponse> CustomerOfflineAsync(CustomerOffline request)
         {
-            var data = new GatewayResponse(MakeRequest(request));
+            var data = new GatewayResponse(await MakeRequest(request).ConfigureAwait(false));
 
             return data;
         }
