@@ -172,6 +172,13 @@
             <param name="request"></param>
             <returns></returns>
         </member>
+        <member name="M:PaymentGateway.GatewayClient.QueryAsync(PaymentGateway.Models.QueryRequest)">
+            <summary>
+            Query transaction and reporting data from the gateway.
+            </summary>
+            <param name="request">The query parameters to filter results.</param>
+            <returns>A <see cref="T:PaymentGateway.Query.Models.QueryResponse"/> containing matching transactions or subscriptions.</returns>
+        </member>
         <member name="M:PaymentGateway.GatewayClient.AddPlanAsync(PaymentGateway.Models.AddRecurringPlan)">
             <summary>
             
@@ -338,6 +345,11 @@
         <member name="P:PaymentGateway.GatewayProvider.MerchantOne">
             <summary>
             Merchant One. See <a href="https://secure.merchantonegateway.com/merchants/resources/integration/integration_portal.php">https://secure.merchantonegateway.com/merchants/resources/integration/integration_portal.php</a>
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.GatewayProvider.MerchantX">
+            <summary>
+            Merchant X. See <a href="https://merchantx.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://merchantx.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
             </summary>
         </member>
         <member name="P:PaymentGateway.GatewayProvider.MSGPay">
@@ -1093,6 +1105,129 @@
         <member name="P:PaymentGateway.Models.InvoiceProduct.ItemAlternateTaxId">
             <summary>
             Tax identification number of the merchant that reported the alternate tax amount.
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Models.QueryRequest">
+            <summary>
+            Parameters for querying transaction and reporting data via the Query API.
+            Dates should be in YYYYMMDDHHMMSS format (UTC).
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.ReportType">
+            <summary>
+            The type of report to retrieve.
+            Values: 'transaction' (default), 'customer_vault', 'recurring', 'invoices'
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.TransactionId">
+            <summary>
+            Return a specific transaction by its gateway transaction ID.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.StartDate">
+            <summary>
+            Filter results to transactions on or after this date.
+            Format: YYYYMMDDHHMMSS (UTC)
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.EndDate">
+            <summary>
+            Filter results to transactions on or before this date.
+            Format: YYYYMMDDHHMMSS (UTC)
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.Condition">
+            <summary>
+            Filter by transaction condition.
+            Values: 'pendingsettlement', 'complete', 'failed', 'canceled', 'unknown'
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.TransactionType">
+            <summary>
+            Filter by payment type.
+            Values: 'cc' (credit card), 'ck' (check/ACH)
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.ActionType">
+            <summary>
+            Filter by action type.
+            Values: 'sale', 'auth', 'capture', 'void', 'refund', 'credit'
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.Amount">
+            <summary>
+            Filter by transaction amount. Format: x.xx
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.Email">
+            <summary>
+            Filter by customer email address.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.FirstName">
+            <summary>
+            Filter by customer first name.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.LastName">
+            <summary>
+            Filter by customer last name.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.OrderId">
+            <summary>
+            Filter by order ID.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.PoNumber">
+            <summary>
+            Filter by purchase order number.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.CustomerVaultId">
+            <summary>
+            Filter by Customer Vault ID.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.CardNumber">
+            <summary>
+            Filter by credit card number (last 4 digits or masked number).
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.CardExpiration">
+            <summary>
+            Filter by credit card expiration date. Format: MMYY
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.ProcessorId">
+            <summary>
+            Filter by processor ID (for Multiple MID accounts).
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.BatchId">
+            <summary>
+            Filter by settlement batch ID.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.InvoiceId">
+            <summary>
+            Filter by invoice ID (used when report_type is 'invoices').
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.CustomerId">
+            <summary>
+            Filter by customer ID.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.ResultLimit">
+            <summary>
+            Maximum number of results to return.
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Models.QueryRequest.ResultOrder">
+            <summary>
+            Order of results.
+            Values: 'ASC', 'DESC'
             </summary>
         </member>
         <member name="T:PaymentGateway.Models.AddRecurringPlan">
