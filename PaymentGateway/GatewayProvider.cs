@@ -102,6 +102,11 @@ namespace PaymentGateway
         public static GatewayProvider MerchantOne { get; } = new GatewayProvider("https://secure.merchantonegateway.com/api");
 
         /// <summary>
+        /// Merchant X. See <a href="https://merchantx.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://merchantx.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
+        /// </summary>
+        public static GatewayProvider MerchantX { get; } = new GatewayProvider("https://merchantx.transactiongateway.com/api");
+
+        /// <summary>
         /// MSG Payment Systems. See <a href="https://msgpay.transactiongateway.com/merchants/resources/integration/integration_portal.php">https://msgpay.transactiongateway.com/merchants/resources/integration/integration_portal.php</a>
         /// </summary>
         public static GatewayProvider MSGPay { get; } = new GatewayProvider("https://msgpay.transactiongateway.com/api");
