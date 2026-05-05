@@ -9,7 +9,7 @@ jobs:
     permissions:
       id-token: write  # enable GitHub OIDC token issuance for this job
       contents: write
-    runs-on: windows-latest
+    runs-on: windows-2025-vs2026
     timeout-minutes: 15
     steps:
     - name: Checkout
