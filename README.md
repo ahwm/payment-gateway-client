@@ -27,8 +27,9 @@ Original documentation: <https://integratepayments.transactiongateway.com/mercha
 * [Electronic Processing of North America (EPNA)](https://epna.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 * [Empyrean Merchant Services](https://empyrean.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 * [Inspire Commerce (.pay / dot pay)](https://secure.inspiregateway.net/merchants/resources/integration/integration_portal.php)
-* [Merchant Guy](https://vizypay.transactiongateway.com/merchants/resources/integration/integration_portal.php)
+* [Merchant Guy](https://secure.merchantguygateway.com/merchants/resources/integration/integration_portal.php)
 * [Merchant One](https://secure.merchantonegateway.com/merchants/resources/integration/integration_portal.php)
+* [Merchant X](https://merchantx.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 * [MSG Payment Systems](https://msgpay.transactiongateway.com/merchants/resources/integration/integration_portal.php)
 * [National Processing](https://secure.nationalprocessinggateway.com/merchants/resources/integration/integration_portal.php)
 * [Network Merchants (NMI)](https://secure.networkmerchants.com/merchants/resources/integration/integration_portal.php)
@@ -58,6 +59,7 @@ If you find another gateway that uses this system, please file an issue to get t
 
 ```csharp
             var securityKey = "6457Thfj624V5r7WUwc5v6a68Zsd6YEm"; // test account
+            // Provider is optional and defaults to NMI.
             var client = new GatewayClient(securityKey, GatewayProvider.NMI);
             Sale sale = new Sale
             {
@@ -81,6 +83,7 @@ If you find another gateway that uses this system, please file an issue to get t
 
 ```csharp
             var securityKey = "6457Thfj624V5r7WUwc5v6a68Zsd6YEm"; // test account
+            // Provider is optional and defaults to NMI.
             var client = new GatewayClient(securityKey, GatewayProvider.NMI);
             Sale sale = new Sale
             {
