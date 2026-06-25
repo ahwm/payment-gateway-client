@@ -719,9 +719,69 @@ namespace PaymentGateway.Models
         public string Name { get; set; }
     }
 
+    /// <inheritdoc/>
+    public class WebhookDataConverter : JsonConverter<WebhookData>
+    {
+        /// <inheritdoc/>
+        public override WebhookData Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            if (reader.TokenType != JsonTokenType.StartObject)
+                throw new JsonException();
+
+            var result = new WebhookData();
+
+            while (reader.Read())
+            {
+                if (reader.TokenType == JsonTokenType.EndObject)
+                    return result;
+
+                if (reader.TokenType != JsonTokenType.PropertyName)
+                    throw new JsonException();
+
+                string propertyName = reader.GetString();
+                reader.Read();
+
+                switch (propertyName)
+                {
+                    case "event_id":
+                        result.EventId = reader.GetString();
+                        break;
+                    case "event_type":
+                        result.EventType = reader.GetString();
+                        break;
+                    case "event_body":
+                        var element = JsonSerializer.Deserialize<JsonElement>(ref reader, options);
+                        result.EventBody = element.Deserialize<Event>(options);
+                        result.EventBodyRaw = element.Deserialize<Dictionary<string, object>>(options);
+                        break;
+                    default:
+                        reader.Skip();
+                        break;
+                }
+            }
+
+            throw new JsonException();
+        }
+
+        /// <inheritdoc/>
+        public override void Write(Utf8JsonWriter writer, WebhookData value, JsonSerializerOptions options)
+        {
+            writer.WriteStartObject();
+            writer.WriteString("event_id", value.EventId);
+            writer.WriteString("event_type", value.EventType?.ToString());
+            if (value.EventBody != null)
+            {
+                writer.WritePropertyName("event_body");
+                JsonSerializer.Serialize(writer, value.EventBody, options);
+            }
+            writer.WriteEndObject();
+        }
+    }
+
     /// <summary>
-    /// 
+    ///
     /// </summary>
+    [JsonConverter(typeof(WebhookDataConverter))]
     public class WebhookData
     {
         /// <summary>
@@ -743,9 +803,8 @@ namespace PaymentGateway.Models
         public Event EventBody { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
-        [JsonPropertyName("event_body")]
         public Dictionary<string, object> EventBodyRaw { get; set; }
     }
 
