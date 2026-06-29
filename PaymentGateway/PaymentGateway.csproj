@@ -10,9 +10,9 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/ahwm/payment-gateway-client</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/ahwm/payment-gateway-client</RepositoryUrl>
-		<Version>0.0.13</Version>
+		<Version>1.0.0</Version>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
-		<PackageReleaseNotes>Fix JSON property collision in WebhookData for event_body</PackageReleaseNotes>
+		<PackageReleaseNotes>Full 1.0 release with DI and query support</PackageReleaseNotes>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Description>Client for interacting with Transaction Gateway endpoints for multiple providers compatible with Network Merchants (NMI)</Description>
 		<PackageTags>nmi bottomline payment gateway processor api mastercard amex visa canyonpay cyogate epna 0merchant easypaydirect vizypay durango PaymentGateway networkmerchants transactiongateway</PackageTags>
