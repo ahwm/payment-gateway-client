@@ -42,6 +42,11 @@ namespace PaymentGateway
         private GatewayProvider Provider { get; }
         private string SecurityKey { get; }
 
+#if !NET462
+        private readonly HttpClient _httpClient;
+        private static readonly System.Lazy<HttpClient> _sharedHttpClient = new System.Lazy<HttpClient>(() => new HttpClient());
+#endif
+
         /// <summary>
         /// Initialize for use with any supported provider
         /// </summary>
@@ -68,9 +73,43 @@ namespace PaymentGateway
         public GatewayClient(string securityKey, string postUrl) : this(securityKey, new GatewayProvider(postUrl))
         { }
 
+#if !NET462
+        /// <summary>
+        /// Initialize for use with any supported provider with a provided <see cref="HttpClient"/> for dependency injection
+        /// </summary>
+        /// <param name="securityKey"></param>
+        /// <param name="provider"></param>
+        /// <param name="httpClient"></param>
+        public GatewayClient(string securityKey, GatewayProvider provider, HttpClient httpClient)
+        {
+            SecurityKey = securityKey;
+            Provider = provider;
+            _httpClient = httpClient;
+        }
+
+        /// <summary>
+        /// Initialize for use with default provider (NMI) with a provided <see cref="HttpClient"/> for dependency injection
+        /// </summary>
+        /// <param name="securityKey"></param>
+        /// <param name="httpClient"></param>
+        public GatewayClient(string securityKey, HttpClient httpClient) : this(securityKey, GatewayProvider.NMI, httpClient)
+        { }
+
+        /// <summary>
+        /// Initialize for use with any supported provider with a provided <see cref="HttpClient"/> for dependency injection. Please file an issue at <a href="https://github.com/ahwm/payment-gateway-client">https://github.com/ahwm/payment-gateway-client</a> if using a provider not included
+        /// </summary>
+        /// <param name="securityKey"></param>
+        /// <param name="postUrl"></param>
+        /// <param name="httpClient"></param>
+        public GatewayClient(string securityKey, string postUrl, HttpClient httpClient) : this(securityKey, new GatewayProvider(postUrl), httpClient)
+        { }
+#endif
+
         private async Task<Dictionary<string, string>> MakeRequest(object model)
         {
+#if NET462
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+#endif
 
             Dictionary<string, string> Values = new Dictionary<string, string>
             {
@@ -86,6 +125,7 @@ namespace PaymentGateway
             Dictionary<string, string> resp = new Dictionary<string, string>();
             try
             {
+#if NET462
                 using (HttpClient client = new HttpClient())
                 {
                     using (var postContent = new FormUrlEncodedContent(Values))
@@ -101,6 +141,21 @@ namespace PaymentGateway
                         }
                     }
                 }
+#else
+                HttpClient client = _httpClient ?? _sharedHttpClient.Value;
+                using (var postContent = new FormUrlEncodedContent(Values))
+                using (HttpResponseMessage response = await client.PostAsync(Provider.PostUrl + "/transact.php", postContent).ConfigureAwait(false))
+                {
+                    response.EnsureSuccessStatusCode();
+                    using (HttpContent content = response.Content)
+                    {
+                        string result = await content.ReadAsStringAsync();
+                        var values = HttpUtility.ParseQueryString(result);
+                        foreach (var key in values.AllKeys)
+                            resp.Add(key, values[key]);
+                    }
+                }
+#endif
             }
             catch (Exception ex)
             {
@@ -114,7 +169,9 @@ namespace PaymentGateway
 
         private async Task<QueryResponse> MakeQueryRequest(object model)
         {
+#if NET462
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+#endif
 
             Dictionary<string, string> Values = new Dictionary<string, string>
             {
@@ -130,6 +187,7 @@ namespace PaymentGateway
             var resp = new QueryResponse();
             try
             {
+#if NET462
                 using (HttpClient client = new HttpClient())
                 {
                     using (var postContent = new FormUrlEncodedContent(Values))
@@ -143,6 +201,19 @@ namespace PaymentGateway
                         }
                     }
                 }
+#else
+                HttpClient client = _httpClient ?? _sharedHttpClient.Value;
+                using (var postContent = new FormUrlEncodedContent(Values))
+                using (HttpResponseMessage response = await client.PostAsync(Provider.PostUrl + "/query.php", postContent).ConfigureAwait(false))
+                {
+                    response.EnsureSuccessStatusCode();
+                    using (HttpContent content = response.Content)
+                    {
+                        string result = await content.ReadAsStringAsync();
+                        resp = (QueryResponse)new XmlSerializer(typeof(QueryResponse)).Deserialize(new MemoryStream(Encoding.UTF8.GetBytes(result)));
+                    }
+                }
+#endif
             }
             catch (Exception ex)
             {

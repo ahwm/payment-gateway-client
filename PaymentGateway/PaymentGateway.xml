@@ -102,6 +102,29 @@
             <param name="securityKey"></param>
             <param name="postUrl"></param>
         </member>
+        <member name="M:PaymentGateway.GatewayClient.#ctor(System.String,PaymentGateway.GatewayProvider,System.Net.Http.HttpClient)">
+            <summary>
+            Initialize for use with any supported provider with a provided <see cref="T:System.Net.Http.HttpClient"/> for dependency injection
+            </summary>
+            <param name="securityKey"></param>
+            <param name="provider"></param>
+            <param name="httpClient"></param>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.#ctor(System.String,System.Net.Http.HttpClient)">
+            <summary>
+            Initialize for use with default provider (NMI) with a provided <see cref="T:System.Net.Http.HttpClient"/> for dependency injection
+            </summary>
+            <param name="securityKey"></param>
+            <param name="httpClient"></param>
+        </member>
+        <member name="M:PaymentGateway.GatewayClient.#ctor(System.String,System.String,System.Net.Http.HttpClient)">
+            <summary>
+            Initialize for use with any supported provider with a provided <see cref="T:System.Net.Http.HttpClient"/> for dependency injection. Please file an issue at <a href="https://github.com/ahwm/payment-gateway-client">https://github.com/ahwm/payment-gateway-client</a> if using a provider not included
+            </summary>
+            <param name="securityKey"></param>
+            <param name="postUrl"></param>
+            <param name="httpClient"></param>
+        </member>
         <member name="M:PaymentGateway.GatewayClient.CreateInvoiceAsync(PaymentGateway.Models.CreateInvoice)">
             <summary>
             
